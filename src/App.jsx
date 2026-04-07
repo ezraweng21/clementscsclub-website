@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "framer-motion";
+import MatrixBackground from "./components/MatrixBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -27,9 +28,10 @@ function App() {
   const location = useLocation();
 
   return (
-    <>
+    <div className="app-shell">
+      <MatrixBackground />
       <Navbar />
-      <main>
+      <main className="app-main">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route
@@ -84,7 +86,7 @@ function App() {
         </AnimatePresence>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
