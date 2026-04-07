@@ -242,6 +242,29 @@ img {
   }
 }
 
+@keyframes radarSweep {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes radarPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
+}
+
 .navbar {
   background: rgba(4, 11, 17, 0.84);
   color: var(--text);
@@ -1214,6 +1237,322 @@ img {
   gap: 1rem;
 }
 
+.command-center {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.command-sidebar,
+.command-hologram {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(103, 235, 198, 0.14);
+  box-shadow: var(--shadow);
+}
+
+.command-sidebar {
+  padding: 1rem;
+  background:
+    linear-gradient(180deg, rgba(103, 235, 198, 0.06), transparent 20%),
+    rgba(8, 18, 27, 0.86);
+}
+
+.command-hologram {
+  padding: 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(127, 208, 255, 0.1), transparent 26%),
+    linear-gradient(180deg, rgba(9, 24, 35, 0.95), rgba(5, 14, 20, 0.94));
+}
+
+.command-sidebar::before,
+.command-hologram::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  pointer-events: none;
+}
+
+.command-label,
+.command-stat-label,
+.command-mini-eyebrow,
+.command-track-command {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+}
+
+.command-label,
+.command-stat-label,
+.command-mini-eyebrow {
+  color: var(--accent);
+}
+
+.command-track-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.command-track-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 0.85rem;
+  border-radius: 16px;
+  background: rgba(6, 14, 22, 0.72);
+  border: 1px solid rgba(127, 208, 255, 0.1);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.command-track-button:hover,
+.command-track-button-active {
+  transform: translateY(-2px);
+  border-color: rgba(103, 235, 198, 0.26);
+  background: rgba(12, 28, 40, 0.9);
+}
+
+.command-track-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(103, 235, 198, 0.7);
+  flex-shrink: 0;
+}
+
+.command-track-copy {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.command-track-title {
+  font-weight: 700;
+}
+
+.command-track-command {
+  color: var(--text-muted);
+}
+
+.command-mini-panel {
+  margin-top: 1rem;
+  border-radius: 16px;
+  padding: 0.9rem;
+  background: rgba(4, 11, 17, 0.74);
+  border: 1px solid rgba(103, 235, 198, 0.12);
+}
+
+.command-mini-code {
+  color: #c6fff2;
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.78rem;
+  margin-top: 0.4rem;
+}
+
+.command-hologram-head,
+.command-display {
+  display: grid;
+  gap: 1rem;
+}
+
+.command-hologram-head {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.command-hologram-head h3 {
+  font-size: 1.35rem;
+  margin-top: 0.15rem;
+}
+
+.command-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(103, 235, 198, 0.08);
+  border: 1px solid rgba(103, 235, 198, 0.2);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.72rem;
+}
+
+.command-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(103, 235, 198, 0.8);
+}
+
+.command-display {
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.command-radar {
+  position: relative;
+  width: min(260px, 100%);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(103, 235, 198, 0.12), transparent 62%),
+    rgba(5, 14, 20, 0.9);
+  border: 1px solid rgba(127, 208, 255, 0.14);
+}
+
+.command-radar-ring,
+.command-radar-core,
+.command-radar-sweep {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+}
+
+.command-radar-ring {
+  border: 1px solid rgba(103, 235, 198, 0.14);
+  transform: translate(-50%, -50%);
+}
+
+.ring-a {
+  width: 42%;
+  height: 42%;
+}
+
+.ring-b {
+  width: 66%;
+  height: 66%;
+}
+
+.ring-c {
+  width: 88%;
+  height: 88%;
+}
+
+.command-radar-core {
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  background: #d5fff1;
+  box-shadow:
+    0 0 0 8px rgba(103, 235, 198, 0.08),
+    0 0 20px rgba(103, 235, 198, 0.8);
+}
+
+.command-radar-sweep {
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg, rgba(103, 235, 198, 0.18), transparent 22%, transparent 100%);
+  animation: radarSweep 7s linear infinite;
+}
+
+.command-radar-node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-cool);
+  box-shadow: 0 0 12px rgba(127, 208, 255, 0.85);
+  animation: radarPulse 3.4s ease-in-out infinite;
+}
+
+.node-a {
+  top: 22%;
+  left: 62%;
+}
+
+.node-b {
+  top: 58%;
+  left: 24%;
+  animation-delay: 0.9s;
+}
+
+.node-c {
+  top: 70%;
+  right: 22%;
+  animation-delay: 1.6s;
+}
+
+.command-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.command-stat-card,
+.command-description-card,
+.command-feed {
+  border-radius: 16px;
+  background: rgba(7, 17, 26, 0.76);
+  border: 1px solid rgba(127, 208, 255, 0.12);
+}
+
+.command-stat-card {
+  padding: 0.85rem;
+}
+
+.command-stat-card h4 {
+  font-size: 0.95rem;
+  margin: 0.18rem 0;
+}
+
+.command-stat-card p:last-child {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.command-description-card {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.command-description {
+  color: var(--text-soft);
+  margin-top: 0.35rem;
+  max-width: 62ch;
+}
+
+.command-feed {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.command-feed-line {
+  display: flex;
+  gap: 0.55rem;
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.76rem;
+  color: #c6fff2;
+}
+
+.command-feed-prompt {
+  color: var(--accent-warm);
+}
+
 .telemetry-card {
   position: relative;
   overflow: hidden;
@@ -1504,6 +1843,11 @@ img {
 }
 
 @media (max-width: 980px) {
+  .command-center,
+  .command-display {
+    grid-template-columns: 1fr;
+  }
+
   .system-banner {
     grid-template-columns: 1fr;
   }
@@ -1522,6 +1866,7 @@ img {
   .content-grid.two-col,
   .signal-grid,
   .track-grid,
+  .command-info-grid,
   .telemetry-strip,
   .globe-stats,
   .globe-node-row {
@@ -1652,6 +1997,7 @@ img {
   .officer-grid-compact,
   .signal-grid,
   .track-grid,
+  .command-info-grid,
   .telemetry-strip,
   .globe-stats,
   .globe-node-row {
