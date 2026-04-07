@@ -9,7 +9,7 @@ function Officers() {
           <h1>Meet Our Officers</h1>
           <p className="section-text officer-intro">
             The students helping lead {siteContent.club.name} through meetings,
-            planning, competitions, communication, and club activities.
+            planning, projects, communication, and club activities.
           </p>
         </div>
 

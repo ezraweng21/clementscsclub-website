@@ -10,8 +10,8 @@ function EventsPreview() {
             <p className="section-kicker">Events</p>
             <h2>Meetings and Activities</h2>
             <p className="section-lead">
-              The club includes recurring meetings, reviews, competition prep,
-              and special biology-related events throughout the year.
+              The club includes recurring meetings, workshops, project sessions,
+              and special CS-related events throughout the year.
             </p>
           </div>
 
@@ -24,9 +24,7 @@ function EventsPreview() {
           {siteContent.events.types.slice(0, 3).map((eventType) => (
             <article className="content-card" key={eventType}>
               <h3>{eventType}</h3>
-              <p>
-                Part of the club’s recurring structure and yearly meeting flow.
-              </p>
+              <p>Part of the club's recurring structure and yearly flow.</p>
             </article>
           ))}
         </div>

@@ -1,290 +1,275 @@
 const siteContent = {
   club: {
-    name: "Clements Biology Club",
+    name: "Clements Computer Science Club",
     school: "William P. Clements High School",
-    tagline: "The mysteries of life...",
+    tagline: "Build, learn, and create with code.",
     description:
-      "Clements Biology Club is a student-led organization for students interested in biology, medicine, and scientific exploration. We host general meetings, competition-focused sessions, AP Biology and AAC review meetings, and interactive activities that go beyond standard coursework. From competition prep to fun labs, socials, and application-based biology topics, the club creates a space for both learning and community among biology enthusiasts.",
+      "Clements Computer Science Club is a student-led space for students who want to explore programming, problem-solving, technology, and collaborative projects. This starter site uses temporary content for meetings, workshops, competitions, and community events so the club can easily replace placeholders with final details later.",
   },
 
   meetingInfo: {
     schedule:
-      "General meetings are usually held on the first Thursday of each month after school. The last meeting of each month typically includes fun activities and biology-related applications. AAC and AP Biology test review meetings usually occur one or two days before major tests.",
-    shortSchedule:
-      "General meetings: usually first Thursday of each month after school",
-    reviewSchedule: "AAC/AP review meetings: usually 1–2 days before tests",
-    location: "Room 2127",
+      "General meetings are planned as recurring after-school sessions during the school year. Workshops, project meetings, and competition prep can be added once the final calendar is confirmed.",
+    shortSchedule: "General meetings: monthly after school (placeholder)",
+    workshopSchedule:
+      "Workshops and project sessions: scheduled as needed (placeholder)",
+    location: "Room TBD",
     joinText:
-      "Join our Discord or Remind to stay updated on meetings, reviews, resources, and club events. The club is open to all students interested in biology.",
+      "Join the club Discord or Remind once links are finalized. All experience levels are welcome, including beginners who are just getting started.",
   },
 
   join: {
     title: "How to Join",
     steps: [
-      "Join the club Discord or Remind to receive updates and announcements.",
-      "Fill out the interest form and attend a meeting or review session.",
-      "Stay active through meetings, events, and club resources throughout the year.",
+      "Join the Discord or Remind once those channels are set up for announcements.",
+      "Fill out the interest form when it is published and attend an intro meeting or workshop.",
+      "Stay involved through meetings, coding activities, team projects, and club events during the year.",
     ],
   },
 
   homepage: {
     intro:
-      "A place for students to explore biology beyond the classroom through meetings, reviews, competition preparation, interactive activities, and community.",
+      "A starter site for students to explore coding, projects, competitions, and computer science beyond the classroom.",
     highlights: [
-      "General meetings with biology topics and interactive activities",
-      "AP Biology and AAC test review sessions",
-      "Competition preparation for biology-related events",
-      "Guest speakers, socials, and community-building activities",
+      "Hands-on coding workshops and beginner-friendly learning sessions",
+      "Collaborative projects, hackathon prep, and build nights",
+      "Competition support for programming and problem-solving events",
+      "Guest speakers, showcases, and community-building activities",
+    ],
+    terminalLines: [
+      "git init club-site",
+      "npm create vite@latest project-lab",
+      "function buildIdeas() { return members.map(makeSomething); }",
+      "status: waiting for real club links, officer names, and event dates",
+    ],
+    signalItems: [
+      {
+        label: "Mode",
+        value: "BUILD / LEARN / SHARE",
+        text: "A flexible starter setup for workshops, competitions, and project nights.",
+      },
+      {
+        label: "Members",
+        value: "ALL LEVELS",
+        text: "Designed for beginners, experienced coders, and everyone in between.",
+      },
+      {
+        label: "Format",
+        value: "DATA-DRIVEN",
+        text: "Most club copy and placeholders can be swapped from a central content file.",
+      },
+    ],
+    tracks: [
+      {
+        title: "Code Lab",
+        command: "learn();",
+        text: "Starter-friendly lessons for programming basics, syntax, debugging, and problem-solving.",
+      },
+      {
+        title: "Build Studio",
+        command: "shipProject();",
+        text: "Room for websites, apps, tools, automations, and collaborative portfolio projects.",
+      },
+      {
+        title: "Challenge Arena",
+        command: "solve(input);",
+        text: "Practice for contests, hackathons, interview-style questions, and team challenge events.",
+      },
     ],
   },
 
   aboutPoints: [
     {
-      title: "Explore Biology",
-      text: "Go beyond standard coursework through themed meetings, scientific discussion, and application-based biology topics.",
+      title: "Learn Computer Science",
+      text: "Explore programming concepts, software ideas, and technical problem-solving through approachable club activities.",
     },
     {
-      title: "Prepare Academically",
-      text: "Strengthen understanding through AP Biology reviews, AAC support, competition preparation, and topic-based reinforcement.",
+      title: "Build Real Projects",
+      text: "Practice by creating apps, websites, tools, and team projects that can grow as the club develops.",
     },
     {
-      title: "Join a Community",
-      text: "Be part of a student community centered around biology, medicine, research, and curiosity about life science.",
+      title: "Join a Tech Community",
+      text: "Meet students who enjoy coding, design, engineering, and experimenting with new ideas together.",
     },
   ],
 
   officers: [
     {
       role: "President",
-      name: "Vidya Ganesh",
+      name: "Name Here",
       grade: "12",
-      image: "/officers/vidya.jpg",
+      image: "/images/officers/president.jpg",
     },
     {
       role: "Vice President",
-      name: "Matthew Chen",
+      name: "Name Here",
       grade: "11",
-      image: "/officers/matthew.jpg",
-    },
-    {
-      role: "Vice President",
-      name: "Henry Xu",
-      grade: "12",
-      image: "/officers/henry.jpg",
-    },
-    {
-      role: "Event Coordinator",
-      name: "Ezra Weng",
-      grade: "11",
-      image: "/officers/ezra.jpg",
-    },
-    {
-      role: "Event Coordinator",
-      name: "Stephen Tang",
-      grade: "11",
-      image: "/officers/stephen.jpg",
+      image: "/images/officers/vice-president.jpg",
     },
     {
       role: "Secretary",
-      name: "Yilin Ni",
+      name: "Name Here",
       grade: "11",
-      image: "/officers/yilin.jpg",
+      image: "/images/officers/officer.jpg",
     },
     {
-      role: "Advanced Coach",
-      name: "Albert Nguyen",
-      grade: "12",
-      image: "/officers/albert.jpg",
-    },
-    {
-      role: "Novice Coach",
-      name: "Tiffany Yuan",
+      role: "Treasurer",
+      name: "Name Here",
       grade: "11",
-      image: "/officers/tiffany.jpg",
+      image: "/images/officers/officer.jpg",
     },
     {
-      role: "Volunteer Coordinator",
-      name: "Edward Jun",
+      role: "Projects Lead",
+      name: "Name Here",
       grade: "10",
-      image: "/officers/edward.jpg",
+      image: "/images/officers/officer.jpg",
     },
     {
-      role: "Social Media Manager",
-      name: "Sophia Li",
-      grade: "12",
-      image: "/officers/sophia.jpg",
-    },
-    {
-      role: "Novice Coach",
-      name: "Daniel Zhu",
-      grade: "11",
-      image: "/officers/daniel.jpg",
+      role: "Outreach Lead",
+      name: "Name Here",
+      grade: "10",
+      image: "/images/officers/officer.jpg",
     },
   ],
 
   events: {
     types: [
-      "General meetings with interactive activities",
-      "AP Biology review sessions",
-      "AAC Biology review sessions",
-      "Competition biology meetings",
-      "Alumni panels and guest speakers",
-      "Fun events and socials",
+      "General meetings with demos, announcements, and coding topics",
+      "Workshops for programming fundamentals and technical skills",
+      "Project build sessions and collaborative work time",
+      "Competition preparation for coding challenges and team events",
+      "Guest speakers, alumni talks, and career exploration",
+      "Showcases, socials, and club-wide community events",
     ],
 
     timeline: [
       {
-        date: "August 21, 2025",
-        title: "Bio Club Interest Meeting",
+        date: "August 2026",
+        title: "Club Interest Meeting",
         description:
-          "Introduction to the club, overview of the year, and first chance for students to get involved.",
+          "Placeholder kickoff meeting to introduce the club, officer team, and opportunities for the year.",
       },
       {
-        date: "September 4, 2025",
-        title: "September General Meeting: Cahaltown Case Study",
+        date: "September 2026",
+        title: "Beginner Coding Workshop",
         description:
-          "General meeting centered around a biology-themed case study and discussion-based exploration.",
+          "Sample workshop focused on a beginner-friendly programming topic such as Python, web basics, or problem-solving.",
       },
       {
-        date: "October 9, 2025",
-        title:
-          "October General Meeting: Anaerobic Respiration — Ginger Bugs / Yeast Balloons",
+        date: "October 2026",
+        title: "Project Brainstorm Night",
         description:
-          "Interactive meeting focused on anaerobic respiration through hands-on activity and application.",
+          "Placeholder collaborative session where members pitch ideas and form teams for club projects.",
       },
       {
-        date: "November 13, 2025",
-        title: "Alumni Panel",
+        date: "November 2026",
+        title: "Competition Prep Session",
         description:
-          "Panel-style event featuring alumni perspectives, advice, and discussion related to biology, academics, and future pathways.",
+          "Starter placeholder for programming contest prep, practice problems, or interview-style challenges.",
       },
       {
-        date: "November 19, 2025",
-        title:
-          "November General Meeting: Joint Jeopardy Social + Cookie Decorating",
+        date: "December 2026",
+        title: "Guest Speaker or Alumni Panel",
         description:
-          "A combined review-style and community event with Jeopardy and a social activity.",
+          "Temporary space for a speaker event covering CS pathways, internships, personal projects, or college advice.",
       },
       {
-        date: "December 11, 2025",
-        title:
-          "December General Meeting: Forensics Social (Christmas Murder Mystery)",
+        date: "January 2027",
+        title: "Spring Semester Restart Meeting",
         description:
-          "Forensics-themed social meeting with a biology/crime-science application focus.",
+          "Placeholder meeting to reset goals, welcome new members, and launch spring programming.",
       },
       {
-        date: "January 15, 2026",
-        title: "January General Meeting",
-        description: "January club meeting and semester restart programming.",
+        date: "February 2027",
+        title: "Build Session",
+        description:
+          "Project work time for websites, apps, automation ideas, or other member-led builds.",
       },
       {
-        date: "February 26, 2026",
-        title: "February General Meeting: Microscopy Lab ID Competition",
+        date: "March 2027",
+        title: "Hackathon or Showcase Prep",
         description:
-          "Microscopy-focused meeting featuring lab identification and biology competition-style practice.",
+          "Temporary event slot for demo preparation, portfolio work, or hackathon planning.",
       },
       {
-        date: "March 2, 2026",
-        title: "March General Meeting #1: Cryptography (MATH × BIO)",
+        date: "April 2027",
+        title: "Club Showcase",
         description:
-          "Exploration of interdisciplinary connections between mathematics and biology through cryptography-themed content.",
-      },
-      {
-        date: "March 27, 2026",
-        title: "March General Meeting #2: Computational Biology (CS × BIO)",
-        description:
-          "Meeting focused on computational biology and the intersection of computer science and life science.",
-      },
-      {
-        date: "April 2, 2026",
-        title: "Raising Cane's Bio Club Fundraiser",
-        description:
-          "Club fundraiser event to support biology club activities and participation.",
-      },
-      {
-        date: "Tentative",
-        title: "April General Meeting: End of Year Social",
-        description:
-          "Tentative end-of-year social event to close out the club year.",
+          "Placeholder celebration for member projects, presentations, and highlights from the year.",
       },
     ],
   },
 
   resources: [
     {
-      category: "Public Drive",
-      title: "Past Resources & Presentations",
-      description:
-        "Public Google Drive folder with previous club resources, slides, and meeting materials.",
-      link: "https://drive.google.com/drive/folders/1ICGCnRfIHLDfnY0jDCMlvkGyIH5HU3m9",
-    },
-    {
       category: "Discord",
-      title: "Join the Discord",
+      title: "Club Discord",
       description:
-        "Primary hub for announcements, updates, and club communication.",
-      link: "https://discord.com/invite/BP2PBRYyZb",
+        "Placeholder for the main communication server for announcements, resources, and discussion.",
+      link: "",
     },
     {
       category: "Remind",
-      title: "Join the Remind",
-      description: "Receive meeting reminders and quick club updates.",
-      link: "https://www.remind.com/join/chsbio2526",
-    },
-    {
-      category: "Instagram",
-      title: "Club Instagram",
+      title: "Club Remind",
       description:
-        "Follow the club Instagram for announcements, updates, and featured content.",
-      link: "https://www.instagram.com/chsbiologyclub/",
+        "Placeholder for meeting reminders and quick updates once the class code is available.",
+      link: "",
     },
     {
       category: "Interest Form",
-      title: "Bio Club Interest Form",
-      description: "Sign up and express interest in joining Biology Club.",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLScxaJLAJXdV0yvlKRYZZNMcCsSh8RI9LFFclcUK6SdCd6drEg/viewform?usp=header",
-    },
-    {
-      category: "Linktree",
-      title: "Club Linktree",
-      description: "Central hub for club links and public-facing resources.",
-      link: "https://linktr.ee/clementsbioclub",
-    },
-    {
-      category: "Bio Bites",
-      title: "Bio Bites Archive",
+      title: "Interest Form",
       description:
-        "Placeholder for a dedicated Bio Bites gallery or Instagram-based archive.",
-      link: "https://www.instagram.com/chsbiologyclub/",
+        "Placeholder sign-up form for students who want to join the Computer Science Club.",
+      link: "",
     },
     {
-      category: "T-Shirt Contest",
-      title: "T-Shirt Contest",
+      category: "Shared Drive",
+      title: "Slides and Meeting Materials",
       description:
-        "Tentative section for T-shirt contest information and submissions.",
+        "Placeholder for workshop slides, notes, starter files, and archived meeting resources.",
+      link: "",
+    },
+    {
+      category: "Projects",
+      title: "Project Hub",
+      description:
+        "Placeholder for repositories, project prompts, or a gallery of member work.",
+      link: "",
+    },
+    {
+      category: "Competitions",
+      title: "Competition Resources",
+      description:
+        "Placeholder for practice materials, challenge links, and competition registration details.",
+      link: "",
+    },
+    {
+      category: "Socials",
+      title: "Club Instagram",
+      description:
+        "Placeholder for social updates, event reminders, and featured club moments.",
       link: "",
     },
     {
       category: "Dues",
-      title: "RevTrak Dues",
+      title: "Member Dues",
       description:
-        "Tentative section for member dues payment link and deadline.",
+        "Placeholder for payment information and deadlines if dues are used later.",
       link: "",
     },
   ],
 
   contact: {
-    generalEmail: "chs.biologyolympiad@gmail.com",
-    sponsorName: "Joshua Cahal",
-    sponsorEmail: "joshua.cahal@fortbendisd.gov",
-    instagramHandle: "@chsbiologyclub",
-    remindCode: "@chsbio2526",
-    discordLink: "https://discord.com/invite/BP2PBRYyZb",
-    remindLink: "https://www.remind.com/join/chsbio2526",
-    instagramLink: "https://www.instagram.com/chsbiologyclub/",
-    interestFormLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLScxaJLAJXdV0yvlKRYZZNMcCsSh8RI9LFFclcUK6SdCd6drEg/viewform?usp=header",
-    linktree: "https://linktr.ee/clementsbioclub",
+    generalEmail: "TBD - add club email",
+    sponsorName: "Faculty Sponsor TBD",
+    sponsorEmail: "TBD - add sponsor email",
+    instagramHandle: "@clementscsclub",
+    remindCode: "@TBD",
+    discordLink: "",
+    remindLink: "",
+    instagramLink: "",
+    interestFormLink: "",
+    linktree: "TBD - add link hub",
   },
 };
 

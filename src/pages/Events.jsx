@@ -24,10 +24,9 @@ function Events() {
             </div>
 
             <p className="section-text">
-              {siteContent.club.name} includes general meetings, review
-              sessions, competition preparation, guest speakers, alumni panels,
-              and other interactive biology-related activities throughout the
-              year.
+              {siteContent.club.name} includes general meetings, workshops,
+              competition preparation, guest speakers, showcases, and other
+              interactive CS-related activities throughout the year.
             </p>
           </section>
 
@@ -44,7 +43,7 @@ function Events() {
                 <article className="card" key={eventType}>
                   <h3>{eventType}</h3>
                   <p>
-                    Part of the club’s recurring yearly structure and student
+                    Part of the club's recurring yearly structure and student
                     activity schedule.
                   </p>
                 </article>
@@ -62,7 +61,8 @@ function Events() {
 
             <p className="section-text timeline-intro">
               This section can be updated throughout the year to document club
-              meetings, reviews, workshops, panels, and special events.
+              meetings, workshops, speaker events, project nights, and special
+              events.
             </p>
 
             <div className="timeline">

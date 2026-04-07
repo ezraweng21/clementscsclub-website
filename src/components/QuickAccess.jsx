@@ -1,5 +1,30 @@
 import siteContent from "../data/siteContent";
 
+function QuickAccessCard({ label, title, description, href, cta }) {
+  return (
+    <article className="resource-card">
+      <p className="resource-label">{label}</p>
+      <h3>{title}</h3>
+      <p>{description}</p>
+
+      {href ? (
+        <a
+          href={href}
+          className="resource-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {cta}
+        </a>
+      ) : (
+        <span className="resource-link resource-link-disabled">
+          Link Coming Soon
+        </span>
+      )}
+    </article>
+  );
+}
+
 function QuickAccess() {
   return (
     <section className="home-section alt-surface">
@@ -8,7 +33,7 @@ function QuickAccess() {
           <p className="section-kicker">Quick Access</p>
           <h2>Meeting Info, Joining, and Links</h2>
           <p className="section-lead">
-            The most important club information in one place.
+            The most important starter information in one place.
           </p>
         </div>
 
@@ -20,8 +45,8 @@ function QuickAccess() {
           </article>
 
           <article className="content-card">
-            <h3>Review Meetings</h3>
-            <p>{siteContent.meetingInfo.reviewSchedule}</p>
+            <h3>Workshops & Build Sessions</h3>
+            <p>{siteContent.meetingInfo.workshopSchedule}</p>
           </article>
 
           <article className="content-card">
@@ -31,47 +56,29 @@ function QuickAccess() {
         </div>
 
         <div className="resource-grid top-spacing">
-          <article className="resource-card">
-            <p className="resource-label">Discord</p>
-            <h3>Join Discord</h3>
-            <p>Stay updated on announcements, resources, and meetings.</p>
-            <a
-              href={siteContent.contact.discordLink}
-              className="resource-link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open Link
-            </a>
-          </article>
+          <QuickAccessCard
+            label="Discord"
+            title="Join Discord"
+            description="Stay updated on announcements, resources, and meetings."
+            href={siteContent.contact.discordLink}
+            cta="Open Link"
+          />
 
-          <article className="resource-card">
-            <p className="resource-label">Remind</p>
-            <h3>Join Remind</h3>
-            <p>Use code {siteContent.contact.remindCode} for club reminders.</p>
-            <a
-              href={siteContent.contact.remindLink}
-              className="resource-link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open Link
-            </a>
-          </article>
+          <QuickAccessCard
+            label="Remind"
+            title="Join Remind"
+            description={`Use code ${siteContent.contact.remindCode} for club reminders.`}
+            href={siteContent.contact.remindLink}
+            cta="Open Link"
+          />
 
-          <article className="resource-card">
-            <p className="resource-label">Interest Form</p>
-            <h3>Sign Up</h3>
-            <p>Fill out the interest form to get involved with Biology Club.</p>
-            <a
-              href={siteContent.contact.interestFormLink}
-              className="resource-link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open Form
-            </a>
-          </article>
+          <QuickAccessCard
+            label="Interest Form"
+            title="Sign Up"
+            description="Fill out the interest form once the CS Club signup is published."
+            href={siteContent.contact.interestFormLink}
+            cta="Open Form"
+          />
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import siteContent from "../data/siteContent";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,8 +16,8 @@ function Navbar() {
     <header className="navbar">
       <div className="container navbar-content">
         <NavLink to="/" className="logo" onClick={handleCloseMenu}>
-          <span className="logo-mark">🧬</span>
-          <span className="logo-text">Clements Biology Club</span>
+          <span className="logo-mark">&lt;/&gt;</span>
+          <span className="logo-text">{siteContent.club.name}</span>
         </NavLink>
 
         <button

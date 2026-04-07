@@ -2,32 +2,32 @@ const upcomingEventTypes = [
   {
     title: "General Meetings",
     description:
-      "Regular club meetings featuring announcements, biology topics, interactive activities, and member engagement.",
+      "Recurring club meetings featuring announcements, coding topics, demos, and member engagement.",
+  },
+  {
+    title: "Workshops",
+    description:
+      "Beginner-friendly and intermediate sessions focused on programming, tools, or technical skills.",
+  },
+  {
+    title: "Project Sessions",
+    description:
+      "Collaborative work time for apps, websites, automation ideas, and other member-led builds.",
   },
   {
     title: "Competition Preparation",
     description:
-      "Preparation sessions for biology-related competitions such as USABO and Science Olympiad.",
-  },
-  {
-    title: "Workshops & Activities",
-    description:
-      "Themed meetings, review sessions, collaborative activities, and special biology-focused events.",
+      "Practice and strategy sessions for coding contests, hackathons, and team challenges.",
   },
   {
     title: "Guest Speakers",
     description:
-      "Talks or Q&A sessions with students, alumni, researchers, or professionals connected to biology-related fields.",
+      "Talks or Q&A sessions with students, alumni, or professionals connected to technology fields.",
   },
   {
-    title: "Outreach & Collaboration",
+    title: "Showcases & Socials",
     description:
-      "Joint events, service projects, and school/community activities that connect biology to the broader student experience.",
-  },
-  {
-    title: "Seasonal Highlights",
-    description:
-      "Officer introductions, beginning-of-year member events, competition season support, and end-of-year wrap-up activities.",
+      "Project demos, community events, and end-of-semester highlights for club members.",
   },
 ];
 
@@ -37,84 +37,70 @@ const pastEvents = [
     title: "Officer Introductions & Club Kickoff",
     type: "Meeting",
     description:
-      "Introduced the officer team, welcomed new members, and gave an overview of plans for the school year.",
+      "Placeholder kickoff meeting to introduce the officer team and year plan.",
   },
   {
     date: "September 2026",
-    title: "Biology Club Interest Meeting",
+    title: "Computer Science Club Interest Meeting",
     type: "Meeting",
     description:
-      "Shared club opportunities, competition information, and ways members can get involved throughout the year.",
+      "Shared club goals, ways to get involved, and starter opportunities for new members.",
   },
   {
     date: "September 2026",
-    title: "USABO / Science Olympiad Overview Session",
-    type: "Academic",
+    title: "Intro to Coding Workshop",
+    type: "Workshop",
     description:
-      "Introduced biology competition pathways and discussed how students can begin preparing.",
+      "Placeholder workshop focused on a beginner-friendly programming topic.",
   },
   {
     date: "October 2026",
-    title: "Themed Biology Enrichment Meeting",
-    type: "Meeting",
+    title: "Project Brainstorm Session",
+    type: "Project",
     description:
-      "Focused on an engaging biology topic beyond standard classroom content through discussion and exploration.",
-  },
-  {
-    date: "October 2026",
-    title: "Competition Preparation Workshop",
-    type: "Academic",
-    description:
-      "Held a structured review or preparation session for students interested in biology competitions.",
+      "Collaborative session for generating ideas and forming teams for club builds.",
   },
   {
     date: "November 2026",
-    title: "Interactive Club Activity",
-    type: "Activity",
+    title: "Competition Practice Night",
+    type: "Academic",
     description:
-      "Ran a collaborative activity, challenge, or biology-themed event to increase member participation.",
+      "Structured problem-solving session for students interested in CS challenges.",
   },
   {
     date: "December 2026",
     title: "Semester Wrap-Up Meeting",
     type: "Meeting",
     description:
-      "Reflected on the semester, highlighted member participation, and looked ahead to spring activities.",
+      "Reflection on the semester, club highlights, and preview of spring plans.",
   },
   {
     date: "January 2027",
     title: "Spring Semester Restart Meeting",
     type: "Meeting",
     description:
-      "Reviewed goals for the new semester and reintroduced upcoming opportunities for members.",
+      "Reviewed spring goals and upcoming workshops, projects, and events.",
   },
   {
     date: "February 2027",
     title: "Guest Speaker / Career Exploration Session",
     type: "Speaker",
     description:
-      "Hosted a speaker or discussion related to biology, medicine, research, or scientific careers.",
+      "Placeholder for a speaker event about CS pathways, internships, or personal projects.",
   },
   {
     date: "March 2027",
-    title: "Biology Review or Study Session",
-    type: "Academic",
+    title: "Hackathon or Showcase Prep",
+    type: "Project",
     description:
-      "Provided members with structured review, topic reinforcement, or competition-oriented preparation.",
+      "Preparation session for demos, presentations, or collaborative project milestones.",
   },
   {
     date: "April 2027",
-    title: "Collaborative Event or Outreach Activity",
+    title: "Club Showcase",
     type: "Event",
     description:
-      "Participated in a joint event, service project, or broader school/community-centered activity.",
-  },
-  {
-    date: "May 2027",
-    title: "End-of-Year Reflection & Recognition",
-    type: "Meeting",
-    description:
-      "Closed out the year with reflections, highlights, appreciation, and celebration of club involvement.",
+      "Celebrated member work, project demos, and club accomplishments from the year.",
   },
 ];
 

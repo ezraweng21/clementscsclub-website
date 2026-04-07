@@ -21,26 +21,26 @@ function About() {
 
             <div className="card-grid">
               <article className="card">
-                <h3>Explore Biology</h3>
+                <h3>Learn Computer Science</h3>
                 <p>
-                  Learn beyond standard classroom content through themed
-                  meetings, broader scientific ideas, and deeper discussion.
+                  Explore programming concepts, technical ideas, and creative
+                  problem-solving through approachable meetings and workshops.
                 </p>
               </article>
 
               <article className="card">
-                <h3>Grow Academically</h3>
+                <h3>Grow Through Projects</h3>
                 <p>
-                  Build understanding through enrichment, preparation, review,
-                  and exposure to more advanced biology topics.
+                  Build experience through demos, collaborative projects,
+                  practice challenges, and hands-on experimentation.
                 </p>
               </article>
 
               <article className="card">
                 <h3>Build Community</h3>
                 <p>
-                  Meet students with similar interests in biology, medicine,
-                  research, and scientific learning.
+                  Meet students with shared interests in coding, engineering,
+                  design, and technology.
                 </p>
               </article>
             </div>

@@ -8,8 +8,8 @@ function Resources() {
           <p className="page-eyebrow">Resources</p>
           <h1>Resources for Members</h1>
           <p className="section-text">
-            Use this page as a central place for meeting materials, review
-            content, competition preparation, forms, and public club links.
+            Use this page as a central place for meeting materials, coding
+            resources, project links, forms, and public club links.
           </p>
         </div>
 
@@ -51,9 +51,9 @@ function Resources() {
             </div>
 
             <p className="resource-note">
-              Bio Bites embedding can be added later. T-shirt contest and
-              RevTrak dues sections are included as placeholders for future
-              links and deadlines.
+              Most resource entries are intentionally left as placeholders so
+              real club links can be dropped in later without changing the page
+              structure.
             </p>
           </section>
         </div>

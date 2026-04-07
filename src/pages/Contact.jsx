@@ -47,8 +47,8 @@ function Contact() {
               </article>
 
               <article className="card">
-                <h3>Review Meetings</h3>
-                <p>{siteContent.meetingInfo.reviewSchedule}</p>
+                <h3>Workshops & Build Sessions</h3>
+                <p>{siteContent.meetingInfo.workshopSchedule}</p>
               </article>
 
               <article className="card">
