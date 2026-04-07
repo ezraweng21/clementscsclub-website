@@ -6,42 +6,42 @@ function WhyJoin() {
           <p className="section-kicker">Why Join</p>
           <h2>What Members Gain</h2>
           <p className="section-lead">
-            The club is designed to support both students who are brand new to
-            coding and students who already want to build more ambitious
-            projects.
+            Computer Science Club is built for students who want both fun,
+            interactive experiences and stronger technical growth through
+            regular practice and community.
           </p>
         </div>
 
         <div className="content-grid two-col">
           <article className="content-card">
-            <h3>Technical Growth</h3>
+            <h3>Interactive Learning</h3>
             <p>
-              Build stronger programming fundamentals and explore new computer
-              science topics outside of class.
+              Explore computer science through engaging activities, themed
+              lessons, and meetings that make technical topics feel exciting.
             </p>
           </article>
 
           <article className="content-card">
-            <h3>Competition Support</h3>
+            <h3>Competition Readiness</h3>
             <p>
-              Practice problem-solving for coding challenges, hackathons, and
-              other technical events in a collaborative setting.
+              Strengthen logic, speed, and problem-solving through
+              competition-focused lessons and coaching support.
             </p>
           </article>
 
           <article className="content-card">
-            <h3>Meaningful Projects</h3>
+            <h3>Consistent Growth</h3>
             <p>
-              Participate in workshops, build sessions, demos, and club-driven
-              ideas that can grow into real portfolio pieces.
+              Build skills week by week through Friday meetings, structured
+              practice, and guidance from a large officer and coaching team.
             </p>
           </article>
 
           <article className="content-card">
-            <h3>Shared Interest Community</h3>
+            <h3>Community and Support</h3>
             <p>
-              Connect with students who enjoy coding, technology, design, and
-              learning by making things together.
+              Meet students who are interested in coding, current CS students,
+              and club leaders who want to help everyone improve.
             </p>
           </article>
         </div>

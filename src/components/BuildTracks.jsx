@@ -6,10 +6,10 @@ function BuildTracks() {
       <div className="container">
         <div className="section-heading">
           <p className="section-kicker">Tracks</p>
-          <h2>How the Club Can Feel</h2>
+          <h2>How the Club Shows Up</h2>
           <p className="section-lead">
-            These starter tracks turn the homepage into something closer to a
-            CS hub than a generic student organization page.
+            These featured areas highlight the balance between interactive
+            learning, competition preparation, and a strong student community.
           </p>
         </div>
 

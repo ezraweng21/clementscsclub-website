@@ -33,7 +33,7 @@ function QuickAccess() {
           <p className="section-kicker">Quick Access</p>
           <h2>Meeting Info, Joining, and Links</h2>
           <p className="section-lead">
-            The most important starter information in one place.
+            The most important club information in one place.
           </p>
         </div>
 

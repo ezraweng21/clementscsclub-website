@@ -1,106 +1,78 @@
 const upcomingEventTypes = [
   {
-    title: "General Meetings",
+    title: "Friday Meetings",
     description:
-      "Recurring club meetings featuring announcements, coding topics, demos, and member engagement.",
+      "Weekly after-school club meetings with announcements, lessons, activities, and community-building.",
   },
   {
-    title: "Workshops",
+    title: "Interactive CS Topics",
     description:
-      "Beginner-friendly and intermediate sessions focused on programming, tools, or technical skills.",
+      "Fun and engaging meetings focused on interesting computer science ideas beyond regular classwork.",
   },
   {
-    title: "Project Sessions",
+    title: "Competition Lessons",
     description:
-      "Collaborative work time for apps, websites, automation ideas, and other member-led builds.",
+      "Training sessions and coaching designed to strengthen problem-solving and competitive CS skills.",
   },
   {
-    title: "Competition Preparation",
+    title: "Novice and Advanced Support",
     description:
-      "Practice and strategy sessions for coding contests, hackathons, and team challenges.",
+      "Different levels of coaching and practice for students who are just starting and students already going further.",
   },
   {
-    title: "Guest Speakers",
+    title: "Seasonal Contests",
     description:
-      "Talks or Q&A sessions with students, alumni, or professionals connected to technology fields.",
+      "Special contest programming such as the annual Thanksgiving Contest and other competitive events.",
   },
   {
-    title: "Showcases & Socials",
+    title: "Club Activities",
     description:
-      "Project demos, community events, and end-of-semester highlights for club members.",
+      "Community-oriented activities, club highlights, and special events throughout the year.",
   },
 ];
 
 const pastEvents = [
   {
-    date: "August 2026",
-    title: "Officer Introductions & Club Kickoff",
+    date: "Weekly",
+    title: "Friday General Meetings",
     type: "Meeting",
     description:
-      "Placeholder kickoff meeting to introduce the officer team and year plan.",
+      "Recurring meetings that bring members together for lessons, updates, and weekly club programming.",
   },
   {
-    date: "September 2026",
-    title: "Computer Science Club Interest Meeting",
+    date: "Fall",
+    title: "Interest Meeting",
     type: "Meeting",
     description:
-      "Shared club goals, ways to get involved, and starter opportunities for new members.",
+      "Introduces the club, explains how to join, and shows students how to stay involved throughout the year.",
   },
   {
-    date: "September 2026",
-    title: "Intro to Coding Workshop",
+    date: "Fall",
+    title: "Interactive Topic Session",
     type: "Workshop",
     description:
-      "Placeholder workshop focused on a beginner-friendly programming topic.",
+      "A fun computer science meeting built around an engaging topic, challenge, or activity.",
   },
   {
-    date: "October 2026",
-    title: "Project Brainstorm Session",
-    type: "Project",
-    description:
-      "Collaborative session for generating ideas and forming teams for club builds.",
-  },
-  {
-    date: "November 2026",
-    title: "Competition Practice Night",
+    date: "Throughout the Year",
+    title: "Competition Training",
     type: "Academic",
     description:
-      "Structured problem-solving session for students interested in CS challenges.",
+      "Structured lessons and guided practice aimed at competitive programming growth and technical problem-solving.",
   },
   {
-    date: "December 2026",
-    title: "Semester Wrap-Up Meeting",
-    type: "Meeting",
+    date: "November",
+    title: "Annual Thanksgiving Contest",
+    type: "Contest",
     description:
-      "Reflection on the semester, club highlights, and preview of spring plans.",
+      "Seasonal contest programming supported by packet leads, coaches, and the officer team.",
   },
   {
-    date: "January 2027",
-    title: "Spring Semester Restart Meeting",
-    type: "Meeting",
+    date: "Spring",
+    title: "Skill Building and Coaching",
+    type: "Academic",
     description:
-      "Reviewed spring goals and upcoming workshops, projects, and events.",
-  },
-  {
-    date: "February 2027",
-    title: "Guest Speaker / Career Exploration Session",
-    type: "Speaker",
-    description:
-      "Placeholder for a speaker event about CS pathways, internships, or personal projects.",
-  },
-  {
-    date: "March 2027",
-    title: "Hackathon or Showcase Prep",
-    type: "Project",
-    description:
-      "Preparation session for demos, presentations, or collaborative project milestones.",
-  },
-  {
-    date: "April 2027",
-    title: "Club Showcase",
-    type: "Event",
-    description:
-      "Celebrated member work, project demos, and club accomplishments from the year.",
+      "Continued support for novice and advanced students through coaching, review, and challenge work.",
   },
 ];
 

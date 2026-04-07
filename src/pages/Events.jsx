@@ -1,4 +1,6 @@
 import siteContent from "../data/siteContent";
+import SystemBanner from "../components/SystemBanner";
+import TelemetryStrip from "../components/TelemetryStrip";
 
 function Events() {
   return (
@@ -15,6 +17,34 @@ function Events() {
         </div>
 
         <div className="events-layout">
+          <SystemBanner
+            eyebrow="Event System"
+            title="Weekly Flow and Club Programming"
+            text="The events page now feels more like a live systems board: recurring meetings, competition prep, special programming, and archived highlights all in one place."
+            chips={["weekly", "interactive", "competitive"]}
+            code="schedule.sync('friday-after-school');"
+          />
+
+          <TelemetryStrip
+            items={[
+              {
+                label: "Cadence",
+                value: "WEEKLY",
+                text: "Friday meetings keep the club active and consistent throughout the year.",
+              },
+              {
+                label: "Format",
+                value: "LESSONS + EVENTS",
+                text: "The club mixes structured training with interactive activities and special programming.",
+              },
+              {
+                label: "Seasonal",
+                value: "THANKSGIVING CONTEST",
+                text: "Major annual events can be highlighted alongside the regular meeting rhythm.",
+              },
+            ]}
+          />
+
           <section className="section-panel">
             <div className="section-header-row">
               <div className="section-header-block">

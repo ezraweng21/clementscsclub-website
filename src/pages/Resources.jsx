@@ -1,4 +1,6 @@
 import siteContent from "../data/siteContent";
+import SystemBanner from "../components/SystemBanner";
+import TelemetryStrip from "../components/TelemetryStrip";
 
 function Resources() {
   return (
@@ -8,12 +10,41 @@ function Resources() {
           <p className="page-eyebrow">Resources</p>
           <h1>Resources for Members</h1>
           <p className="section-text">
-            Use this page as a central place for meeting materials, coding
-            resources, project links, forms, and public club links.
+            Use this page as a central place for club links, public materials,
+            dues information, communication channels, and future member
+            resources.
           </p>
         </div>
 
         <div className="events-layout">
+          <SystemBanner
+            eyebrow="Resource Network"
+            title="Club Links, Materials, and Access Points"
+            text="This page acts like a central command panel for the club's live links now, while still leaving room for future forms, gallery content, and competition materials."
+            chips={["drive", "dues", "socials"]}
+            code="resources.mount('/club-hub');"
+          />
+
+          <TelemetryStrip
+            items={[
+              {
+                label: "Live Links",
+                value: "DRIVE + DUES + IG",
+                text: "The main public links are already active and easy to reach from one place.",
+              },
+              {
+                label: "Next Up",
+                value: "DISCORD + FORMS",
+                text: "Communication and sign-up links can slide in later without changing the page layout.",
+              },
+              {
+                label: "Expansion",
+                value: "GALLERY READY",
+                text: "The design leaves room for a future member gallery and more club content.",
+              },
+            ]}
+          />
+
           <section className="section-panel">
             <div className="section-header-row">
               <div className="section-header-block">
@@ -51,9 +82,9 @@ function Resources() {
             </div>
 
             <p className="resource-note">
-              Most resource entries are intentionally left as placeholders so
-              real club links can be dropped in later without changing the page
-              structure.
+              The shared drive, dues link, email, and Instagram are live.
+              Discord, forms, contest materials, and the future member gallery
+              can stay as polished placeholders until final links are ready.
             </p>
           </section>
         </div>

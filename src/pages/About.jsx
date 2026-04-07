@@ -1,4 +1,5 @@
 import siteContent from "../data/siteContent";
+import DigitalGlobe from "../components/DigitalGlobe";
 
 function About() {
   return (
@@ -11,6 +12,41 @@ function About() {
         </div>
 
         <div className="events-layout">
+          <section className="section-panel about-feature-panel">
+            <div className="section-header-row">
+              <div className="section-header-block">
+                <p className="section-kicker">{siteContent.aboutFeature.eyebrow}</p>
+                <h2 className="subsection-title">{siteContent.aboutFeature.title}</h2>
+              </div>
+            </div>
+
+            <div className="about-feature-layout">
+              <div className="about-feature-copy">
+                <p className="section-text">
+                  {siteContent.aboutFeature.description}
+                </p>
+
+                <div className="card-grid">
+                  {siteContent.aboutPoints.map((point) => (
+                    <article className="card" key={point.title}>
+                      <h3>{point.title}</h3>
+                      <p>{point.text}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              <DigitalGlobe
+                className="about-globe"
+                eyebrow={siteContent.aboutFeature.eyebrow}
+                title={siteContent.aboutFeature.title}
+                description={siteContent.aboutFeature.description}
+                stats={siteContent.aboutFeature.stats}
+                nodes={siteContent.aboutFeature.nodes}
+              />
+            </div>
+          </section>
+
           <section className="section-panel">
             <div className="section-header-row">
               <div className="section-header-block">

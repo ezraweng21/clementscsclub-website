@@ -1,4 +1,6 @@
 import siteContent from "../data/siteContent";
+import SystemBanner from "../components/SystemBanner";
+import TelemetryStrip from "../components/TelemetryStrip";
 
 function Contact() {
   return (
@@ -14,6 +16,34 @@ function Contact() {
         </div>
 
         <div className="events-layout">
+          <SystemBanner
+            eyebrow="Connection Layer"
+            title="Join, Contact, and Stay Updated"
+            text="The contact page can feel more like a live onboarding panel, giving students a clear path from curiosity to joining the club."
+            chips={["discord", "email", "fridays"]}
+            code="connect.member({ status: 'open' });"
+          />
+
+          <TelemetryStrip
+            items={[
+              {
+                label: "Audience",
+                value: "OPEN TO ALL",
+                text: "Anyone can attend, with current computer science students especially encouraged to come.",
+              },
+              {
+                label: "Primary Join Path",
+                value: "DISCORD",
+                text: "The club's main communication channel will remain the fastest way to get updates.",
+              },
+              {
+                label: "Sponsor",
+                value: siteContent.contact.sponsorName,
+                text: "Faculty support stays visible alongside student-facing contact details.",
+              },
+            ]}
+          />
+
           <section className="section-panel">
             <div className="section-header-row">
               <div className="section-header-block">

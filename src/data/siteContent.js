@@ -1,275 +1,436 @@
 const siteContent = {
   club: {
-    name: "Clements Computer Science Club",
+    name: "Computer Science Club",
+    shortName: "CS Club",
     school: "William P. Clements High School",
-    tagline: "Build, learn, and create with code.",
+    tagline: "Coding in progress...",
     description:
-      "Clements Computer Science Club is a student-led space for students who want to explore programming, problem-solving, technology, and collaborative projects. This starter site uses temporary content for meetings, workshops, competitions, and community events so the club can easily replace placeholders with final details later.",
+      "Computer Science Club at William P. Clements High School is a student-led community built around fun, interactive computer science activities, technical exploration, and competition-focused learning. From beginner-friendly topics and collaborative challenges to more advanced lessons and coaching, the club creates a space where students can build skills, stay curious, and grow together through computer science.",
   },
 
   meetingInfo: {
     schedule:
-      "General meetings are planned as recurring after-school sessions during the school year. Workshops, project meetings, and competition prep can be added once the final calendar is confirmed.",
-    shortSchedule: "General meetings: monthly after school (placeholder)",
+      "General meetings are held every Friday after school. Throughout the year, the club also runs competition-focused lessons, coaching sessions, review meetings, and special activity-based programming.",
+    shortSchedule: "General meetings: every Friday after school",
     workshopSchedule:
-      "Workshops and project sessions: scheduled as needed (placeholder)",
-    location: "Room TBD",
+      "Competition lessons, coaching, and special sessions: scheduled throughout the semester",
+    location: "Lorena / Fugel room (room number TBD)",
     joinText:
-      "Join the club Discord or Remind once links are finalized. All experience levels are welcome, including beginners who are just getting started.",
+      "Anyone can attend, and students currently in a computer science class are especially encouraged to come. The best way to stay updated is by joining the club Discord.",
   },
 
   join: {
     title: "How to Join",
     steps: [
-      "Join the Discord or Remind once those channels are set up for announcements.",
-      "Fill out the interest form when it is published and attend an intro meeting or workshop.",
-      "Stay involved through meetings, coding activities, team projects, and club events during the year.",
+      "Join the club Discord to receive announcements, meeting updates, and club information.",
+      "Come to a Friday after-school meeting to get introduced to the club and meet the officer team.",
+      "Stay involved through weekly meetings, competition prep, interactive activities, and club events during the year.",
     ],
   },
 
   homepage: {
+    heroTitle: "Code, compete, and create",
+    heroAccent: "with CS Club.",
     intro:
-      "A starter site for students to explore coding, projects, competitions, and computer science beyond the classroom.",
+      "A student-led space for interactive computer science activities, competitive lessons, collaborative learning, and a stronger tech community at Clements.",
+    heroChips: [
+      "weekly friday meetings",
+      "competition prep",
+      "interactive cs activities",
+    ],
     highlights: [
-      "Hands-on coding workshops and beginner-friendly learning sessions",
-      "Collaborative projects, hackathon prep, and build nights",
-      "Competition support for programming and problem-solving events",
-      "Guest speakers, showcases, and community-building activities",
+      "Fun and interactive computer science activities that go beyond the classroom",
+      "Competition-focused lessons, coaching, and challenge-based learning",
+      "A welcoming space for students currently in CS classes and anyone interested in coding",
+      "Weekly meetings, club events, and opportunities to grow with other students",
     ],
     terminalLines: [
-      "git init club-site",
-      "npm create vite@latest project-lab",
-      "function buildIdeas() { return members.map(makeSomething); }",
-      "status: waiting for real club links, officer names, and event dates",
+      "const meetingDay = 'Friday after school';",
+      "join('Discord').then(() => buildSkills());",
+      "runLesson({ mode: 'interactive', focus: 'competition + creativity' });",
+      "status: recruiting curious coders, problem solvers, and builders",
     ],
     signalItems: [
       {
-        label: "Mode",
-        value: "BUILD / LEARN / SHARE",
-        text: "A flexible starter setup for workshops, competitions, and project nights.",
+        label: "Meetings",
+        value: "EVERY FRIDAY",
+        text: "The club runs weekly after-school meetings with room details and special sessions announced through Discord.",
       },
       {
-        label: "Members",
-        value: "ALL LEVELS",
-        text: "Designed for beginners, experienced coders, and everyone in between.",
+        label: "Leadership",
+        value: "22 OFFICERS",
+        text: "A large officer and coaching team helps support members across activities, lessons, and contests.",
       },
       {
-        label: "Format",
-        value: "DATA-DRIVEN",
-        text: "Most club copy and placeholders can be swapped from a central content file.",
+        label: "Focus",
+        value: "FUN + COMPETITION",
+        text: "The club blends interactive CS topics with more competitive and skill-building experiences.",
+      },
+    ],
+    globeStats: [
+      {
+        label: "Meetings",
+        value: "WEEKLY",
+      },
+      {
+        label: "Team",
+        value: "22 OFFICERS",
+      },
+      {
+        label: "Energy",
+        value: "ACTIVE + GROWING",
+      },
+    ],
+    globeNodes: [
+      {
+        title: "Lessons",
+        value: "CS TOPICS",
+      },
+      {
+        title: "Training",
+        value: "COMPETITION",
+      },
+      {
+        title: "People",
+        value: "COMMUNITY",
       },
     ],
     tracks: [
       {
-        title: "Code Lab",
-        command: "learn();",
-        text: "Starter-friendly lessons for programming basics, syntax, debugging, and problem-solving.",
+        title: "Interactive Topics",
+        command: "explore();",
+        text: "Learn through fun meetings, club activities, and engaging topics that make computer science feel approachable and interesting.",
       },
       {
-        title: "Build Studio",
-        command: "shipProject();",
-        text: "Room for websites, apps, tools, automations, and collaborative portfolio projects.",
+        title: "Competition Prep",
+        command: "train();",
+        text: "Build speed, logic, and problem-solving skills through lessons and coaching connected to competitive CS experiences.",
       },
       {
-        title: "Challenge Arena",
-        command: "solve(input);",
-        text: "Practice for contests, hackathons, interview-style questions, and team challenge events.",
+        title: "Community Growth",
+        command: "connect();",
+        text: "Meet other students interested in coding, grow through shared learning, and be part of the CS culture on campus.",
       },
     ],
   },
 
   aboutPoints: [
     {
-      title: "Learn Computer Science",
-      text: "Explore programming concepts, software ideas, and technical problem-solving through approachable club activities.",
+      title: "Explore Computer Science",
+      text: "Dive into interesting CS topics through interactive lessons, club activities, and conversations that go beyond regular coursework.",
     },
     {
-      title: "Build Real Projects",
-      text: "Practice by creating apps, websites, tools, and team projects that can grow as the club develops.",
+      title: "Grow Through Challenge",
+      text: "Build technical confidence through competition-style lessons, coaching, and problem-solving practice.",
     },
     {
-      title: "Join a Tech Community",
-      text: "Meet students who enjoy coding, design, engineering, and experimenting with new ideas together.",
+      title: "Join the Community",
+      text: "Be part of a collaborative group of students who enjoy coding, learning, and improving together.",
     },
   ],
 
+  aboutFeature: {
+    eyebrow: "Club Network",
+    title: "A Community Connected by Code",
+    description:
+      "Computer Science Club is designed to feel both welcoming and ambitious: a place where students can have fun with computer science, learn interactive topics, and also push themselves through more competitive training and structured growth.",
+    stats: [
+      {
+        label: "Purpose",
+        value: "LEARN + COMPETE",
+      },
+      {
+        label: "People",
+        value: "OPEN TO ALL",
+      },
+      {
+        label: "Culture",
+        value: "COLLABORATIVE",
+      },
+    ],
+    nodes: [
+      {
+        title: "Topics",
+        value: "INTERACTIVE",
+      },
+      {
+        title: "Lessons",
+        value: "COMPETITIVE",
+      },
+      {
+        title: "Club",
+        value: "CONNECTED",
+      },
+    ],
+  },
+
   officers: [
     {
-      role: "President",
-      name: "Name Here",
-      grade: "12",
-      image: "/images/officers/president.jpg",
+      role: "Co-President",
+      name: "Vidya Ganesh",
+      grade: "",
+      image: "/images/officers/vidya.jpg",
+    },
+    {
+      role: "Co-President",
+      name: "Harrison Zhu",
+      grade: "",
+      image: "/images/officers/harrison.jpg",
     },
     {
       role: "Vice President",
-      name: "Name Here",
-      grade: "11",
-      image: "/images/officers/vice-president.jpg",
+      name: "Jonathan Le",
+      grade: "",
+      image: "/images/officers/jonathan.jpg",
+    },
+    {
+      role: "Lead Advanced Coach",
+      name: "Benjamin Lin",
+      grade: "",
+      image: "/images/officers/benjamin.jpg",
+    },
+    {
+      role: "Lead Novice Coach",
+      name: "Max Liu",
+      grade: "",
+      image: "/images/officers/max.jpg",
+    },
+    {
+      role: "Lead Novice Coach",
+      name: "Caroline Liu",
+      grade: "",
+      image: "/images/officers/caroline.jpg",
+    },
+    {
+      role: "Sys Admin",
+      name: "Christensen Wijaya",
+      grade: "",
+      image: "/images/officers/christensen.jpg",
+    },
+    {
+      role: "Sys Admin",
+      name: "Ezra Weng",
+      grade: "",
+      image: "/images/officers/ezra.jpg",
+    },
+    {
+      role: "Historian",
+      name: "Faye Tang",
+      grade: "",
+      image: "/images/officers/faye.jpg",
     },
     {
       role: "Secretary",
-      name: "Name Here",
-      grade: "11",
-      image: "/images/officers/officer.jpg",
+      name: "Claire Weng",
+      grade: "",
+      image: "/images/officers/claire.jpg",
     },
     {
-      role: "Treasurer",
-      name: "Name Here",
-      grade: "11",
-      image: "/images/officers/officer.jpg",
+      role: "Coach Trainer",
+      name: "Nikhil Chowdhary",
+      grade: "",
+      image: "/images/officers/nikhil.jpg",
     },
     {
-      role: "Projects Lead",
-      name: "Name Here",
-      grade: "10",
-      image: "/images/officers/officer.jpg",
+      role: "Coach",
+      name: "Ryan Wu",
+      grade: "",
+      image: "/images/officers/ryan.jpg",
     },
     {
-      role: "Outreach Lead",
-      name: "Name Here",
-      grade: "10",
-      image: "/images/officers/officer.jpg",
+      role: "Coach",
+      name: "Olivia Xu",
+      grade: "",
+      image: "/images/officers/olivia.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Matthew Chen",
+      grade: "",
+      image: "/images/officers/matthew.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Bryan Wang",
+      grade: "",
+      image: "/images/officers/bryan.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Ethan Leal",
+      grade: "",
+      image: "/images/officers/ethan.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Emma Xu",
+      grade: "",
+      image: "/images/officers/emma.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Yale Zhang",
+      grade: "",
+      image: "/images/officers/yale.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Andrew Meng",
+      grade: "",
+      image: "/images/officers/andrew.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Ava Chen",
+      grade: "",
+      image: "/images/officers/ava.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Wufan Zhang",
+      grade: "",
+      image: "/images/officers/wufan.jpg",
+    },
+    {
+      role: "Coach",
+      name: "Jessica Xu",
+      grade: "",
+      image: "/images/officers/jessica.jpg",
     },
   ],
 
   events: {
     types: [
-      "General meetings with demos, announcements, and coding topics",
-      "Workshops for programming fundamentals and technical skills",
-      "Project build sessions and collaborative work time",
-      "Competition preparation for coding challenges and team events",
-      "Guest speakers, alumni talks, and career exploration",
-      "Showcases, socials, and club-wide community events",
+      "Weekly Friday after-school meetings",
+      "Interactive computer science activities and themed lessons",
+      "Competition-focused training and coaching sessions",
+      "Novice and advanced lesson support",
+      "Special contests, team events, and seasonal programming",
+      "Community-building meetings and club-wide activities",
     ],
 
     timeline: [
       {
-        date: "August 2026",
-        title: "Club Interest Meeting",
+        date: "Weekly",
+        title: "Friday General Meetings",
         description:
-          "Placeholder kickoff meeting to introduce the club, officer team, and opportunities for the year.",
+          "Recurring after-school meetings that bring members together for announcements, lessons, activities, and club updates.",
       },
       {
-        date: "September 2026",
-        title: "Beginner Coding Workshop",
+        date: "Fall",
+        title: "Interest Meeting and Semester Kickoff",
         description:
-          "Sample workshop focused on a beginner-friendly programming topic such as Python, web basics, or problem-solving.",
+          "Introduces new members to the club, explains how the year works, and highlights opportunities to participate.",
       },
       {
-        date: "October 2026",
-        title: "Project Brainstorm Night",
+        date: "Throughout the Semester",
+        title: "Interactive CS Topic Meetings",
         description:
-          "Placeholder collaborative session where members pitch ideas and form teams for club projects.",
+          "Club meetings centered on fun and engaging computer science ideas, problem-solving activities, and student participation.",
       },
       {
-        date: "November 2026",
-        title: "Competition Prep Session",
+        date: "Throughout the Semester",
+        title: "Competition Lessons and Coaching",
         description:
-          "Starter placeholder for programming contest prep, practice problems, or interview-style challenges.",
+          "Structured lessons designed to help students strengthen technical thinking and prepare for competitive CS experiences.",
       },
       {
-        date: "December 2026",
-        title: "Guest Speaker or Alumni Panel",
+        date: "November",
+        title: "Annual Thanksgiving Contest",
         description:
-          "Temporary space for a speaker event covering CS pathways, internships, personal projects, or college advice.",
+          "A major seasonal contest supported by packet leads, coaches, and the broader officer team.",
       },
       {
-        date: "January 2027",
-        title: "Spring Semester Restart Meeting",
+        date: "Spring",
+        title: "Advanced and Novice Skill Building",
         description:
-          "Placeholder meeting to reset goals, welcome new members, and launch spring programming.",
+          "Continued support for members at different experience levels through lessons, guided practice, and coaching.",
       },
       {
-        date: "February 2027",
-        title: "Build Session",
+        date: "Spring",
+        title: "Special Events and Club Activities",
         description:
-          "Project work time for websites, apps, automation ideas, or other member-led builds.",
+          "Additional activities, collaborative events, and community moments that keep the club active and engaging throughout the year.",
       },
       {
-        date: "March 2027",
-        title: "Hackathon or Showcase Prep",
+        date: "End of Year",
+        title: "Wrap-Up and Recognition",
         description:
-          "Temporary event slot for demo preparation, portfolio work, or hackathon planning.",
-      },
-      {
-        date: "April 2027",
-        title: "Club Showcase",
-        description:
-          "Placeholder celebration for member projects, presentations, and highlights from the year.",
+          "A closing reflection on the year with highlights, appreciation, and celebration of member and officer involvement.",
       },
     ],
   },
 
   resources: [
     {
-      category: "Discord",
-      title: "Club Discord",
+      category: "Public Drive",
+      title: "Shared Club Drive",
       description:
-        "Placeholder for the main communication server for announcements, resources, and discussion.",
-      link: "",
+        "Public Google Drive folder for club materials, resources, and shared files.",
+      link: "https://drive.google.com/drive/folders/1l-jrvwEIcd25lVJ-hMKcQA8JhuZncTeX?usp=sharing",
     },
     {
-      category: "Remind",
-      title: "Club Remind",
+      category: "Dues",
+      title: "RevTrak Club Dues",
       description:
-        "Placeholder for meeting reminders and quick updates once the class code is available.",
+        "Temporary dues/payment link for next year and other future club logistics.",
+      link: "https://fortbendisd.revtrak.net/FBISD-Schools-1082/hs/CHS/chs-computer-science/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnakOCsPdYqf0fvbgJgGde7emhDRfW2Xv2JYkqwFUXhSKNND6OIKrIUGYSkMU_aem_rGzcstSWy1cYtNVsadurRA#/v/chs-computer-science-club-dues",
+    },
+    {
+      category: "Instagram",
+      title: "Club Instagram",
+      description:
+        "Follow the club Instagram for announcements, updates, and club highlights.",
+      link: "https://www.instagram.com/chscsclub/",
+    },
+    {
+      category: "Email",
+      title: "Club Email",
+      description:
+        "Reach out directly for questions about joining, meetings, and club information.",
+      link: "mailto:clementscsclub@gmail.com",
+    },
+    {
+      category: "Discord",
+      title: "Join the Discord",
+      description:
+        "Primary place for joining updates, meeting reminders, and club communication.",
       link: "",
     },
     {
       category: "Interest Form",
       title: "Interest Form",
       description:
-        "Placeholder sign-up form for students who want to join the Computer Science Club.",
+        "Placeholder for a future sign-up form once the next version is published.",
       link: "",
     },
     {
-      category: "Shared Drive",
-      title: "Slides and Meeting Materials",
+      category: "Member Gallery",
+      title: "Gallery and Club Memories",
       description:
-        "Placeholder for workshop slides, notes, starter files, and archived meeting resources.",
+        "Placeholder for member photos, event snapshots, and a future visual gallery section.",
       link: "",
     },
     {
-      category: "Projects",
-      title: "Project Hub",
+      category: "Competition",
+      title: "Contest and Training Materials",
       description:
-        "Placeholder for repositories, project prompts, or a gallery of member work.",
-      link: "",
-    },
-    {
-      category: "Competitions",
-      title: "Competition Resources",
-      description:
-        "Placeholder for practice materials, challenge links, and competition registration details.",
-      link: "",
-    },
-    {
-      category: "Socials",
-      title: "Club Instagram",
-      description:
-        "Placeholder for social updates, event reminders, and featured club moments.",
-      link: "",
-    },
-    {
-      category: "Dues",
-      title: "Member Dues",
-      description:
-        "Placeholder for payment information and deadlines if dues are used later.",
+        "Placeholder for packet links, practice resources, and future competition materials.",
       link: "",
     },
   ],
 
   contact: {
-    generalEmail: "TBD - add club email",
-    sponsorName: "Faculty Sponsor TBD",
-    sponsorEmail: "TBD - add sponsor email",
-    instagramHandle: "@clementscsclub",
-    remindCode: "@TBD",
+    generalEmail: "clementscsclub@gmail.com",
+    sponsorName: "Lubna Lorena",
+    sponsorEmail: "lubna.lorena@fortbendisd.gov",
+    instagramHandle: "@chscsclub",
+    remindCode: "TBD",
     discordLink: "",
     remindLink: "",
-    instagramLink: "",
+    instagramLink: "https://www.instagram.com/chscsclub/",
     interestFormLink: "",
-    linktree: "TBD - add link hub",
+    linktree: "TBD",
   },
 };
 

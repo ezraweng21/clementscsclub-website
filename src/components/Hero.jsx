@@ -12,16 +12,18 @@ function Hero() {
           </p>
 
           <h1>
-            Build with code
-            <span className="hero-accent"> beyond the classroom.</span>
+            {siteContent.homepage.heroTitle}
+            <span className="hero-accent"> {siteContent.homepage.heroAccent}</span>
           </h1>
 
           <p className="hero-text">{siteContent.homepage.intro}</p>
 
           <div className="hero-chip-row">
-            <span className="hero-chip">binary systems</span>
-            <span className="hero-chip">project builds</span>
-            <span className="hero-chip">creative problem-solving</span>
+            {siteContent.homepage.heroChips.map((chip) => (
+              <span className="hero-chip" key={chip}>
+                {chip}
+              </span>
+            ))}
           </div>
 
           <div className="hero-buttons">
@@ -35,31 +37,33 @@ function Hero() {
         </div>
 
         <div className="hero-right">
-          <div className="terminal-card">
-            <div className="terminal-topbar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
-            <div className="terminal-body">
-              <p className="feature-label">Starter Console</p>
-
-              <div className="terminal-lines">
-                {siteContent.homepage.terminalLines.map((line) => (
-                  <p className="terminal-line" key={line}>
-                    <span className="terminal-prompt">&gt;</span>
-                    <span>{line}</span>
-                  </p>
-                ))}
+          <div className="hero-visual-stack">
+            <div className="terminal-card">
+              <div className="terminal-topbar">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
 
-              <div className="feature-list">
-                {siteContent.homepage.highlights.map((item) => (
-                  <div className="feature-item" key={item}>
-                    <p>{item}</p>
-                  </div>
-                ))}
+              <div className="terminal-body">
+                <p className="feature-label">{siteContent.club.tagline}</p>
+
+                <div className="terminal-lines">
+                  {siteContent.homepage.terminalLines.map((line) => (
+                    <p className="terminal-line" key={line}>
+                      <span className="terminal-prompt">&gt;</span>
+                      <span>{line}</span>
+                    </p>
+                  ))}
+                </div>
+
+                <div className="feature-list">
+                  {siteContent.homepage.highlights.map((item) => (
+                    <div className="feature-item" key={item}>
+                      <p>{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

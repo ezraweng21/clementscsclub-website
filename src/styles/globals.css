@@ -158,6 +158,90 @@ img {
   }
 }
 
+@keyframes orbitSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbitTilt {
+  from {
+    transform: translate(-50%, -50%) rotate(18deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(378deg);
+  }
+}
+
+@keyframes globeFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes particleDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(10px, -12px) scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes cloudDrift {
+  from {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1.02);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.88);
+    opacity: 0.12;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.14);
+    opacity: 0;
+  }
+}
+
+@keyframes beaconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
 .navbar {
   background: rgba(4, 11, 17, 0.84);
   color: var(--text);
@@ -406,6 +490,29 @@ img {
   flex-direction: column;
 }
 
+.hero-visual-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-feature-panel {
+  padding-bottom: 1.4rem;
+}
+
+.about-feature-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.about-feature-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.globe-panel,
 .terminal-card,
 .section-panel,
 .content-card,
@@ -423,6 +530,7 @@ img {
   box-shadow: var(--shadow);
 }
 
+.globe-panel::before,
 .terminal-card::before,
 .section-panel::before,
 .content-card::before,
@@ -442,6 +550,408 @@ img {
     transparent 100%
   );
   pointer-events: none;
+}
+
+.globe-panel {
+  padding: 1rem;
+  background:
+    radial-gradient(circle at top, rgba(127, 208, 255, 0.12), transparent 34%),
+    rgba(6, 16, 24, 0.92);
+}
+
+.globe-panel::after,
+.content-card::after,
+.card::after,
+.resource-card::after,
+.signal-card::after,
+.track-card::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(127, 208, 255, 0.06);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.globe-hud {
+  position: absolute;
+  z-index: 2;
+  max-width: 180px;
+  padding: 0.8rem 0.9rem;
+  border-radius: 16px;
+  background: rgba(7, 17, 26, 0.74);
+  border: 1px solid rgba(103, 235, 198, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.globe-hud-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.globe-hud-label,
+.globe-stat-label,
+.globe-node-title {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.64rem;
+  color: var(--accent);
+  margin-bottom: 0.24rem;
+}
+
+.globe-hud h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.globe-hud p {
+  color: var(--text-soft);
+  font-size: 0.76rem;
+}
+
+.globe-stage {
+  position: relative;
+  min-height: 380px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.globe-stage::before {
+  content: "";
+  position: absolute;
+  inset: 14% 18%;
+  background: radial-gradient(circle, rgba(103, 235, 198, 0.1), transparent 66%);
+  filter: blur(30px);
+}
+
+.globe-scan-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(103, 235, 198, 0.18);
+  box-shadow:
+    0 0 30px rgba(103, 235, 198, 0.08),
+    inset 0 0 24px rgba(127, 208, 255, 0.08);
+  animation: pulseRing 4.8s ease-out infinite;
+}
+
+.globe-beacon {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d7fff2;
+  box-shadow:
+    0 0 0 6px rgba(103, 235, 198, 0.08),
+    0 0 18px rgba(103, 235, 198, 0.72);
+  animation: beaconPulse 3.4s ease-in-out infinite;
+}
+
+.beacon-one {
+  top: 26%;
+  left: 29%;
+}
+
+.beacon-two {
+  top: 38%;
+  right: 28%;
+  animation-delay: 0.9s;
+}
+
+.beacon-three {
+  bottom: 28%;
+  left: 34%;
+  animation-delay: 1.8s;
+}
+
+.globe-core {
+  position: relative;
+  width: min(280px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 56% 58%, rgba(4, 9, 22, 0.36), transparent 30%),
+    radial-gradient(circle at 30% 28%, rgba(207, 255, 244, 0.9), transparent 16%),
+    radial-gradient(circle at 48% 42%, rgba(103, 235, 198, 0.32), transparent 60%),
+    linear-gradient(180deg, rgba(12, 56, 74, 0.98), rgba(4, 18, 28, 0.98));
+  border: 1px solid rgba(127, 208, 255, 0.22);
+  box-shadow:
+    0 0 0 14px rgba(103, 235, 198, 0.03),
+    0 0 42px rgba(31, 201, 176, 0.28),
+    0 0 70px rgba(127, 208, 255, 0.16);
+  animation: globeFloat 7s ease-in-out infinite;
+}
+
+.globe-grid,
+.globe-continent,
+.globe-shine,
+.globe-clouds,
+.globe-atmosphere,
+.globe-shadow,
+.globe-night-lights,
+.globe-coastlines,
+.globe-aurora {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.globe-atmosphere {
+  inset: -2%;
+  border: 2px solid rgba(127, 208, 255, 0.12);
+  box-shadow:
+    inset 0 0 30px rgba(127, 208, 255, 0.1),
+    0 0 30px rgba(127, 208, 255, 0.12);
+}
+
+.globe-night-lights {
+  background:
+    radial-gradient(circle at 30% 44%, rgba(255, 197, 95, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 36% 50%, rgba(255, 214, 141, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 58% 36%, rgba(255, 197, 95, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 63% 40%, rgba(255, 214, 141, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 48% 64%, rgba(255, 197, 95, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 54% 68%, rgba(255, 214, 141, 0.16) 0 2px, transparent 3px);
+  mix-blend-mode: screen;
+  opacity: 0.8;
+}
+
+.globe-grid-horizontal {
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 18px,
+      rgba(127, 208, 255, 0.14) 18px 19px
+    );
+  mask-image: radial-gradient(circle at center, black 58%, transparent 78%);
+}
+
+.globe-grid-vertical {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 22px,
+      rgba(103, 235, 198, 0.1) 22px 23px
+    );
+  transform: rotate(12deg);
+  mask-image: radial-gradient(circle at center, black 58%, transparent 78%);
+}
+
+.globe-continent {
+  background:
+    linear-gradient(180deg, rgba(77, 255, 184, 0.42), rgba(31, 201, 176, 0.18));
+  filter: blur(1.5px);
+  box-shadow: 0 0 18px rgba(103, 235, 198, 0.16);
+}
+
+.continent-one {
+  inset: 24% 22% 46% 40%;
+  clip-path: polygon(0 22%, 30% 0, 78% 10%, 100% 42%, 70% 100%, 18% 82%);
+}
+
+.continent-two {
+  inset: 44% 46% 18% 20%;
+  clip-path: polygon(0 24%, 30% 0, 88% 14%, 100% 56%, 72% 100%, 12% 76%);
+}
+
+.continent-three {
+  inset: 28% 56% 44% 16%;
+  clip-path: polygon(0 34%, 48% 0, 100% 28%, 74% 100%, 16% 82%);
+}
+
+.continent-four {
+  inset: 58% 30% 10% 46%;
+  clip-path: polygon(0 18%, 42% 0, 100% 20%, 72% 100%, 10% 82%);
+}
+
+.continent-five {
+  inset: 16% 18% 60% 58%;
+  clip-path: polygon(0 30%, 38% 0, 100% 34%, 70% 100%, 14% 78%);
+}
+
+.globe-coastlines {
+  background:
+    radial-gradient(circle at 38% 34%, rgba(127, 255, 226, 0.2), transparent 12%),
+    radial-gradient(circle at 58% 40%, rgba(127, 255, 226, 0.16), transparent 10%),
+    radial-gradient(circle at 42% 66%, rgba(127, 255, 226, 0.18), transparent 12%);
+  mix-blend-mode: screen;
+}
+
+.globe-clouds {
+  background: rgba(217, 255, 250, 0.14);
+  filter: blur(7px);
+  mix-blend-mode: screen;
+  animation: cloudDrift 24s linear infinite;
+}
+
+.cloud-one {
+  inset: 18% 42% 56% 16%;
+  clip-path: polygon(0 38%, 20% 12%, 42% 0, 70% 16%, 100% 34%, 86% 72%, 54% 100%, 16% 84%);
+}
+
+.cloud-two {
+  inset: 50% 14% 20% 44%;
+  clip-path: polygon(0 36%, 26% 8%, 64% 0, 100% 26%, 88% 76%, 52% 100%, 10% 80%);
+}
+
+.cloud-three {
+  inset: 30% 18% 44% 48%;
+  clip-path: polygon(0 32%, 32% 0, 82% 12%, 100% 52%, 72% 100%, 18% 84%);
+}
+
+.cloud-four {
+  inset: 60% 36% 12% 18%;
+  clip-path: polygon(0 40%, 24% 10%, 58% 0, 100% 26%, 80% 80%, 42% 100%, 10% 76%);
+  animation-delay: -8s;
+}
+
+.globe-aurora {
+  inset: 8% 10% auto 10%;
+  height: 36%;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(103, 235, 198, 0.14), transparent 52%),
+    linear-gradient(90deg, transparent, rgba(127, 208, 255, 0.08), transparent);
+  filter: blur(12px);
+  mix-blend-mode: screen;
+  opacity: 0.75;
+}
+
+.globe-shine {
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.34), transparent 24%),
+    radial-gradient(circle at 34% 28%, rgba(127, 255, 226, 0.14), transparent 30%);
+}
+
+.globe-shadow {
+  background: radial-gradient(circle at 76% 62%, rgba(0, 0, 0, 0.3), transparent 42%);
+}
+
+.globe-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(127, 208, 255, 0.16);
+  box-shadow: 0 0 18px rgba(127, 208, 255, 0.06);
+}
+
+.orbit-one {
+  width: 330px;
+  height: 330px;
+  animation: orbitSpin 16s linear infinite;
+}
+
+.orbit-two {
+  width: 390px;
+  height: 220px;
+  animation: orbitTilt 20s linear infinite;
+}
+
+.orbit-three {
+  width: 240px;
+  height: 400px;
+  animation: orbitTilt 24s linear infinite reverse;
+}
+
+.orbit-one::before,
+.orbit-two::before,
+.orbit-three::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  box-shadow: 0 0 12px rgba(255, 181, 74, 0.7);
+}
+
+.orbit-one::before {
+  top: 12%;
+  left: 16%;
+}
+
+.orbit-two::before {
+  top: 42%;
+  right: 12%;
+}
+
+.orbit-three::before {
+  bottom: 18%;
+  left: 18%;
+}
+
+.globe-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(103, 235, 198, 0.8);
+  animation: particleDrift 5s ease-in-out infinite;
+}
+
+.particle-one {
+  top: 18%;
+  left: 22%;
+}
+
+.particle-two {
+  top: 26%;
+  right: 20%;
+  animation-delay: 1s;
+}
+
+.particle-three {
+  bottom: 22%;
+  left: 26%;
+  animation-delay: 1.8s;
+}
+
+.particle-four {
+  bottom: 18%;
+  right: 24%;
+  animation-delay: 2.6s;
+}
+
+.globe-stats,
+.globe-node-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.globe-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: -0.4rem;
+}
+
+.globe-stat-card,
+.globe-node-card {
+  padding: 0.85rem 0.9rem;
+  border-radius: 16px;
+  background: rgba(7, 17, 26, 0.76);
+  border: 1px solid rgba(127, 208, 255, 0.12);
+}
+
+.globe-stat-card h4,
+.globe-node-value {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.globe-node-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.8rem;
+}
+
+.about-globe .globe-hud {
+  max-width: 210px;
 }
 
 .terminal-card {
@@ -599,6 +1109,138 @@ img {
 .section-header-block {
   display: flex;
   flex-direction: column;
+}
+
+.system-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(103, 235, 198, 0.06), transparent 48%),
+    rgba(7, 17, 26, 0.84);
+  border: 1px solid rgba(103, 235, 198, 0.16);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.system-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 92%, rgba(127, 208, 255, 0.08) 92% 93%, transparent 93%),
+    linear-gradient(180deg, transparent 0 82%, rgba(103, 235, 198, 0.06) 82% 83%, transparent 83%);
+  pointer-events: none;
+}
+
+.system-banner-copy,
+.system-banner-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.system-banner-eyebrow,
+.telemetry-label {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.66rem;
+  color: var(--accent);
+  margin-bottom: 0.28rem;
+}
+
+.system-banner-copy h2 {
+  margin-bottom: 0.35rem;
+}
+
+.system-banner-copy p,
+.telemetry-card p {
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+.system-banner-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: space-between;
+  border-radius: 16px;
+  padding: 0.95rem;
+  background: rgba(4, 12, 18, 0.8);
+  border: 1px solid rgba(127, 208, 255, 0.1);
+}
+
+.system-banner-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.system-banner-chip {
+  display: inline-flex;
+  padding: 0.38rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(103, 235, 198, 0.08);
+  border: 1px solid rgba(103, 235, 198, 0.14);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.72rem;
+  color: var(--text);
+}
+
+.system-banner-code {
+  display: flex;
+  gap: 0.55rem;
+  align-items: start;
+  padding: 0.8rem 0.85rem;
+  border-radius: 12px;
+  background: rgba(7, 17, 26, 0.92);
+  border: 1px solid rgba(127, 208, 255, 0.1);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.76rem;
+  color: #c6fff2;
+}
+
+.system-banner-prompt {
+  color: var(--accent-warm);
+}
+
+.telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.telemetry-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(10, 22, 32, 0.82);
+  border: 1px solid rgba(127, 208, 255, 0.12);
+  box-shadow: var(--shadow);
+}
+
+.telemetry-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  pointer-events: none;
+}
+
+.telemetry-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.28rem;
+}
+
+.officer-page-full {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 1rem;
 }
 
 .home-section {
@@ -862,6 +1504,10 @@ img {
 }
 
 @media (max-width: 980px) {
+  .system-banner {
+    grid-template-columns: 1fr;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -875,8 +1521,15 @@ img {
   .content-grid.three-col,
   .content-grid.two-col,
   .signal-grid,
-  .track-grid {
+  .track-grid,
+  .telemetry-strip,
+  .globe-stats,
+  .globe-node-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-feature-layout {
+    grid-template-columns: 1fr;
   }
 
   .timeline-item {
@@ -958,6 +1611,21 @@ img {
     padding: 4.2rem 0 3.2rem;
   }
 
+  .globe-stage {
+    min-height: 300px;
+  }
+
+  .globe-hud {
+    position: relative;
+    inset: auto;
+    max-width: none;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-feature-panel {
+    padding-bottom: 1.2rem;
+  }
+
   .hero h1 {
     font-size: clamp(2.1rem, 12vw, 3rem);
   }
@@ -983,7 +1651,10 @@ img {
   .content-grid.two-col,
   .officer-grid-compact,
   .signal-grid,
-  .track-grid {
+  .track-grid,
+  .telemetry-strip,
+  .globe-stats,
+  .globe-node-row {
     grid-template-columns: 1fr;
   }
 
@@ -995,5 +1666,17 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .matrix-canvas {
     opacity: 0.28;
+  }
+
+  .globe-core,
+  .orbit-one,
+  .orbit-two,
+  .orbit-three,
+  .globe-particle,
+  .globe-clouds,
+  .globe-scan-ring,
+  .globe-beacon,
+  .terminal-card {
+    animation: none;
   }
 }
