@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import MatrixBackground from "./components/MatrixBackground";
+import RouteAmbientBackground from "./components/RouteAmbientBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -30,10 +31,12 @@ function App() {
     location.pathname === "/"
       ? "home"
       : location.pathname.replace("/", "").replaceAll("/", "-");
+  const ambientVariant = location.pathname === "/" ? null : routeName;
 
   return (
     <div className={`app-shell route-${routeName}`}>
       {location.pathname === "/" ? <MatrixBackground /> : null}
+      {ambientVariant ? <RouteAmbientBackground variant={ambientVariant} /> : null}
       <Navbar />
       <main className="app-main">
         <AnimatePresence mode="wait">

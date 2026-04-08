@@ -103,34 +103,34 @@ body::after {
 
 .app-shell.route-about .app-main::before {
   background:
-    radial-gradient(circle at 18% 18%, rgba(140, 240, 216, 0.1), transparent 24%),
-    radial-gradient(circle at 82% 28%, rgba(141, 191, 255, 0.1), transparent 26%);
-  opacity: 0.9;
+    radial-gradient(circle at 18% 18%, rgba(140, 240, 216, 0.16), transparent 24%),
+    radial-gradient(circle at 82% 28%, rgba(141, 191, 255, 0.16), transparent 26%);
+  opacity: 1;
 }
 
 .app-shell.route-events .app-main::before {
   background:
-    linear-gradient(180deg, rgba(255, 210, 138, 0.04), transparent 24%),
-    radial-gradient(circle at 78% 18%, rgba(85, 216, 255, 0.1), transparent 22%);
-  opacity: 0.95;
+    linear-gradient(180deg, rgba(255, 210, 138, 0.07), transparent 24%),
+    radial-gradient(circle at 78% 18%, rgba(85, 216, 255, 0.16), transparent 22%);
+  opacity: 1;
 }
 
 .app-shell.route-officers .app-main::before {
   background:
-    radial-gradient(circle at 16% 20%, rgba(201, 233, 255, 0.08), transparent 24%),
-    radial-gradient(circle at 86% 16%, rgba(140, 240, 216, 0.08), transparent 18%);
+    radial-gradient(circle at 16% 20%, rgba(201, 233, 255, 0.14), transparent 24%),
+    radial-gradient(circle at 86% 16%, rgba(140, 240, 216, 0.12), transparent 18%);
 }
 
 .app-shell.route-resources .app-main::before {
   background:
-    linear-gradient(90deg, rgba(141, 191, 255, 0.03), transparent 18%, transparent 82%, rgba(140, 240, 216, 0.03)),
-    radial-gradient(circle at 80% 14%, rgba(140, 240, 216, 0.08), transparent 20%);
+    linear-gradient(90deg, rgba(141, 191, 255, 0.05), transparent 18%, transparent 82%, rgba(140, 240, 216, 0.05)),
+    radial-gradient(circle at 80% 14%, rgba(140, 240, 216, 0.14), transparent 20%);
 }
 
 .app-shell.route-contact .app-main::before {
   background:
-    radial-gradient(circle at 20% 22%, rgba(85, 216, 255, 0.08), transparent 22%),
-    radial-gradient(circle at 82% 18%, rgba(255, 210, 138, 0.08), transparent 18%);
+    radial-gradient(circle at 20% 22%, rgba(85, 216, 255, 0.14), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(255, 210, 138, 0.12), transparent 18%);
 }
 
 .app-shell.route-about .app-main::after,
@@ -141,7 +141,7 @@ body::after {
   inset: 40px 30px auto;
   height: 420px;
   border-radius: 40px;
-  opacity: 0.3;
+  opacity: 0.54;
 }
 
 .app-shell.route-about .app-main::after {
@@ -182,6 +182,33 @@ body::after {
   overflow: hidden;
 }
 
+.route-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.route-ambient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.055), transparent 18%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.015), transparent 24%, rgba(0, 0, 0, 0.035));
+}
+
+.ambient-circuit-field,
+.ambient-chip-field,
+.ambient-hologram-field,
+.ambient-keyboard-field,
+.ambient-orbit-field {
+  position: absolute;
+  inset: 0;
+}
+
 .matrix-canvas {
   width: 100%;
   height: 100%;
@@ -196,6 +223,350 @@ body::after {
   background:
     radial-gradient(circle at center, transparent 34%, rgba(4, 10, 18, 0.24) 100%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent 24%, rgba(0, 0, 0, 0.12));
+}
+
+.route-ambient-events {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(103, 235, 198, 0.14), transparent 18%),
+    radial-gradient(circle at 86% 22%, rgba(103, 235, 198, 0.09), transparent 16%);
+}
+
+.ambient-circuit-line,
+.ambient-circuit-node,
+.ambient-circuit-chip {
+  position: absolute;
+}
+
+.ambient-circuit-line {
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(103, 235, 198, 0.95), rgba(103, 235, 198, 0.08));
+  box-shadow: 0 0 24px rgba(103, 235, 198, 0.28);
+}
+
+.ambient-circuit-line.line-a {
+  top: 18%;
+  left: 8%;
+  width: 28vw;
+  height: 2px;
+}
+
+.ambient-circuit-line.line-b {
+  top: 18%;
+  left: 36%;
+  width: 2px;
+  height: 20vh;
+  background: linear-gradient(180deg, rgba(103, 235, 198, 0.72), rgba(103, 235, 198, 0.06));
+}
+
+.ambient-circuit-line.line-c {
+  right: 10%;
+  bottom: 22%;
+  width: 24vw;
+  height: 2px;
+}
+
+.ambient-circuit-line.line-d {
+  right: 26%;
+  bottom: 22%;
+  width: 2px;
+  height: 18vh;
+  background: linear-gradient(180deg, rgba(103, 235, 198, 0.72), rgba(103, 235, 198, 0.06));
+}
+
+.ambient-circuit-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c8fff3;
+  box-shadow: 0 0 22px rgba(103, 235, 198, 0.9);
+  animation: pulseGlow 3.8s ease-in-out infinite;
+}
+
+.ambient-circuit-node.node-a {
+  top: calc(18% - 5px);
+  left: calc(8% - 3px);
+}
+
+.ambient-circuit-node.node-b {
+  top: calc(18% - 5px);
+  left: calc(36% - 5px);
+  animation-delay: 0.9s;
+}
+
+.ambient-circuit-node.node-c {
+  bottom: calc(22% - 6px);
+  right: calc(10% + 24vw - 6px);
+  animation-delay: 1.4s;
+}
+
+.ambient-circuit-node.node-d {
+  bottom: calc(22% - 6px);
+  right: calc(26% - 5px);
+  animation-delay: 2s;
+}
+
+.ambient-circuit-chip {
+  width: 100px;
+  height: 100px;
+  border-radius: 22px;
+  border: 1px solid rgba(103, 235, 198, 0.24);
+  background:
+    linear-gradient(135deg, rgba(103, 235, 198, 0.18), rgba(127, 208, 255, 0.06)),
+    rgba(7, 17, 26, 0.82);
+  box-shadow:
+    inset 0 0 0 12px rgba(4, 11, 18, 0.28),
+    0 0 28px rgba(103, 235, 198, 0.16);
+}
+
+.ambient-circuit-chip.chip-a {
+  top: 10%;
+  right: 12%;
+}
+
+.ambient-circuit-chip.chip-b {
+  bottom: 10%;
+  left: 12%;
+  width: 76px;
+  height: 76px;
+}
+
+.route-ambient-officers {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(141, 191, 255, 0.14), transparent 18%),
+    radial-gradient(circle at 84% 24%, rgba(141, 191, 255, 0.08), transparent 16%);
+}
+
+.ambient-chip-core,
+.ambient-chip-inner,
+.ambient-chip-trace {
+  position: absolute;
+}
+
+.ambient-chip-core {
+  top: 14%;
+  right: 10%;
+  width: 188px;
+  height: 188px;
+  border-radius: 28px;
+  border: 1px solid rgba(127, 208, 255, 0.24);
+  background:
+    linear-gradient(135deg, rgba(127, 208, 255, 0.24), rgba(103, 235, 198, 0.08)),
+    rgba(7, 17, 26, 0.86);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 36px rgba(127, 208, 255, 0.22);
+}
+
+.ambient-chip-inner {
+  inset: 42px;
+  border-radius: 18px;
+  border: 1px solid rgba(140, 240, 216, 0.16);
+  background: rgba(5, 14, 22, 0.82);
+}
+
+.ambient-chip-trace {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(141, 191, 255, 0.7) 0 7px,
+      transparent 7px 18px
+    );
+  opacity: 0.88;
+}
+
+.ambient-chip-trace.trace-top,
+.ambient-chip-trace.trace-bottom {
+  width: 240px;
+  height: 10px;
+  right: calc(10% - 35px);
+}
+
+.ambient-chip-trace.trace-top {
+  top: 9%;
+}
+
+.ambient-chip-trace.trace-bottom {
+  top: calc(14% + 160px);
+}
+
+.ambient-chip-trace.trace-left,
+.ambient-chip-trace.trace-right {
+  width: 10px;
+  height: 240px;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      rgba(141, 191, 255, 0.7) 0 7px,
+      transparent 7px 18px
+    );
+}
+
+.ambient-chip-trace.trace-left {
+  right: calc(10% + 160px);
+  top: calc(14% - 35px);
+}
+
+.ambient-chip-trace.trace-right {
+  right: calc(10% - 20px);
+  top: calc(14% - 35px);
+}
+
+.route-ambient-resources {
+  background:
+    radial-gradient(circle at 50% 16%, rgba(85, 216, 255, 0.14), transparent 18%),
+    radial-gradient(circle at 80% 68%, rgba(85, 216, 255, 0.08), transparent 16%);
+}
+
+.ambient-holo-layer,
+.ambient-holo-beam {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ambient-holo-layer {
+  border-radius: 999px;
+  border: 1px solid rgba(85, 216, 255, 0.2);
+  background: rgba(85, 216, 255, 0.07);
+  box-shadow: 0 0 28px rgba(85, 216, 255, 0.2);
+}
+
+.ambient-holo-layer.holo-a {
+  top: 14%;
+  width: 320px;
+  height: 46px;
+}
+
+.ambient-holo-layer.holo-b {
+  top: 22%;
+  width: 420px;
+  height: 38px;
+}
+
+.ambient-holo-layer.holo-c {
+  bottom: 18%;
+  width: 360px;
+  height: 34px;
+}
+
+.ambient-holo-layer.holo-d {
+  bottom: 10%;
+  width: 260px;
+  height: 28px;
+}
+
+.ambient-holo-beam {
+  top: 12%;
+  bottom: 8%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(85, 216, 255, 0.35), transparent 92%);
+}
+
+.route-ambient-contact {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255, 210, 138, 0.11), transparent 18%),
+    radial-gradient(circle at 82% 18%, rgba(140, 240, 216, 0.08), transparent 16%);
+}
+
+.ambient-keyboard-field {
+  display: grid;
+  grid-template-columns: repeat(4, 82px);
+  gap: 1rem;
+  justify-content: end;
+  align-content: start;
+  padding: 10vh 8vw 0 0;
+}
+
+.ambient-key {
+  display: grid;
+  place-items: center;
+  min-height: 74px;
+  border-radius: 18px;
+  border: 1px solid rgba(140, 240, 216, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(7, 17, 26, 0.18)),
+    rgba(7, 17, 26, 0.78);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.18),
+    0 0 22px rgba(140, 240, 216, 0.08);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.76rem;
+  color: rgba(212, 255, 246, 0.82);
+}
+
+.ambient-key.key-2,
+.ambient-key.key-5,
+.ambient-key.key-9 {
+  transform: translateY(18px);
+}
+
+.ambient-key.key-3,
+.ambient-key.key-7,
+.ambient-key.key-11 {
+  transform: translateY(-10px);
+}
+
+.route-ambient-about {
+  background:
+    radial-gradient(circle at 16% 14%, rgba(140, 240, 216, 0.11), transparent 18%),
+    radial-gradient(circle at 84% 24%, rgba(141, 191, 255, 0.11), transparent 18%);
+}
+
+.ambient-orbit,
+.ambient-orbit-dot {
+  position: absolute;
+}
+
+.ambient-orbit {
+  border-radius: 50%;
+  border: 1px solid rgba(127, 208, 255, 0.18);
+}
+
+.ambient-orbit.orbit-a {
+  top: 10%;
+  left: -6%;
+  width: 420px;
+  height: 240px;
+  animation: orbitTilt 26s linear infinite;
+}
+
+.ambient-orbit.orbit-b {
+  bottom: 14%;
+  right: -8%;
+  width: 360px;
+  height: 220px;
+  animation: orbitTilt 22s linear infinite reverse;
+}
+
+.ambient-orbit.orbit-c {
+  top: 30%;
+  right: 18%;
+  width: 240px;
+  height: 400px;
+  animation: orbitSpin 32s linear infinite;
+}
+
+.ambient-orbit-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 210, 138, 0.9);
+  box-shadow: 0 0 18px rgba(255, 210, 138, 0.8);
+}
+
+.ambient-orbit-dot.dot-a {
+  top: 18%;
+  left: 14%;
+}
+
+.ambient-orbit-dot.dot-b {
+  bottom: 18%;
+  right: 14%;
+}
+
+.ambient-orbit-dot.dot-c {
+  top: 42%;
+  right: 24%;
 }
 
 a {
@@ -215,6 +586,14 @@ img {
 .container {
   width: min(1180px, 92%);
   margin: 0 auto;
+}
+
+.page-section .container {
+  width: min(980px, 76%);
+}
+
+.page-theme-officers .container {
+  width: min(1040px, 80%);
 }
 
 @keyframes floatSoft {
@@ -1290,16 +1669,18 @@ img {
 }
 
 .page-section {
-  min-height: 70vh;
-  padding-top: 3.8rem;
+  min-height: 60vh;
+  padding-top: 3.2rem;
   position: relative;
   z-index: 1;
 }
 
 .page-header {
-  margin-bottom: 1.4rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(127, 208, 255, 0.12);
+  max-width: 860px;
+  margin-inline: auto;
 }
 
 .subsection-title {
@@ -1308,7 +1689,7 @@ img {
 }
 
 .section-panel {
-  padding: 1.2rem;
+  padding: 0.9rem 1rem;
   background: var(--bg-panel);
 }
 
@@ -1327,7 +1708,7 @@ img {
 }
 
 .section-panel + .section-panel {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 .section-header-row,
@@ -1339,7 +1720,7 @@ img {
 }
 
 .section-header-row {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.55rem;
 }
 
 .section-header-block {
@@ -1350,10 +1731,10 @@ img {
 .system-banner {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-  gap: 1rem;
+  gap: 0.8rem;
   align-items: stretch;
-  padding: 1rem 1.1rem;
-  border-radius: 20px;
+  padding: 0.85rem 0.95rem;
+  border-radius: 18px;
   background:
     linear-gradient(135deg, rgba(103, 235, 198, 0.06), transparent 48%),
     rgba(7, 17, 26, 0.84);
@@ -1402,10 +1783,10 @@ img {
 .system-banner-panel {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.65rem;
   justify-content: space-between;
   border-radius: 16px;
-  padding: 0.95rem;
+  padding: 0.8rem;
   background: rgba(4, 12, 18, 0.8);
   border: 1px solid rgba(127, 208, 255, 0.1);
 }
@@ -1447,14 +1828,14 @@ img {
 .telemetry-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .telemetry-card {
   position: relative;
   overflow: hidden;
-  padding: 0.95rem 1rem;
-  border-radius: 18px;
+  padding: 0.8rem 0.9rem;
+  border-radius: 16px;
   background: rgba(10, 22, 32, 0.82);
   border: 1px solid rgba(127, 208, 255, 0.12);
   box-shadow: var(--shadow);
@@ -1472,6 +1853,7 @@ img {
   font-size: 1rem;
   margin-bottom: 0.28rem;
 }
+
 
 .archive-eyebrow,
 .archive-type,
@@ -1744,6 +2126,11 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.page-theme-officers .officer-grid-compact {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
 .content-grid.two-col {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1837,13 +2224,15 @@ img {
 
 .officer-image-compact {
   width: 100%;
-  aspect-ratio: 1 / 0.88;
+  aspect-ratio: 1 / 0.68;
+  max-height: 152px;
   object-fit: cover;
 }
 
 .officer-placeholder {
   width: 100%;
-  aspect-ratio: 1 / 0.88;
+  aspect-ratio: 1 / 0.68;
+  max-height: 152px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1851,16 +2240,17 @@ img {
     radial-gradient(circle at top, rgba(127, 208, 255, 0.24), transparent 45%),
     linear-gradient(135deg, rgba(9, 20, 30, 0.96), rgba(15, 34, 49, 0.96));
   color: var(--accent);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
 .officer-info-compact {
-  padding: 0.72rem 0.8rem 0.82rem;
+  padding: 0.62rem 0.72rem 0.72rem;
 }
 
 .officer-name-compact {
   line-height: 1.18;
+  font-size: 0.9rem;
 }
 
 .officer-role-compact {
@@ -1876,6 +2266,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .timeline-intro {
@@ -1945,6 +2337,11 @@ img {
 }
 
 @media (max-width: 980px) {
+  .page-section .container,
+  .page-theme-officers .container {
+    width: min(960px, 88%);
+  }
+
   .system-banner {
     grid-template-columns: 1fr;
   }
@@ -2038,6 +2435,11 @@ img {
 }
 
 @media (max-width: 640px) {
+  .page-section .container,
+  .page-theme-officers .container {
+    width: min(960px, 92%);
+  }
+
   .matrix-canvas {
     opacity: 0.38;
   }
@@ -2129,6 +2531,7 @@ img {
   .globe-clouds,
   .globe-scan-ring,
   .globe-beacon,
+  .circuit-node,
   .join-portal-status-dot,
   .terminal-card {
     animation: none;
