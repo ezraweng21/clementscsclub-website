@@ -26,10 +26,14 @@ function PageWrapper({ children }) {
 
 function App() {
   const location = useLocation();
+  const routeName =
+    location.pathname === "/"
+      ? "home"
+      : location.pathname.replace("/", "").replaceAll("/", "-");
 
   return (
-    <div className="app-shell">
-      <MatrixBackground />
+    <div className={`app-shell route-${routeName}`}>
+      {location.pathname === "/" ? <MatrixBackground /> : null}
       <Navbar />
       <main className="app-main">
         <AnimatePresence mode="wait">

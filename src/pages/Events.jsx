@@ -4,7 +4,7 @@ import TelemetryStrip from "../components/TelemetryStrip";
 
 function Events() {
   return (
-    <section className="section page-section">
+    <section className="section page-section page-theme-events">
       <div className="container">
         <div className="page-header">
           <p className="page-eyebrow">Events</p>
@@ -69,13 +69,18 @@ function Events() {
             </div>
 
             <div className="card-grid">
-              {siteContent.events.types.map((eventType) => (
-                <article className="card" key={eventType}>
+              {siteContent.events.types.map((eventType, index) => (
+                <article className="card card-structured" key={eventType}>
+                  <div className="card-topline">
+                    <span className="card-chip">event mode</span>
+                    <span className="card-index">0{index + 1}</span>
+                  </div>
                   <h3>{eventType}</h3>
                   <p>
                     Part of the club's recurring yearly structure and student
                     activity schedule.
                   </p>
+                  <p className="card-footer-note">recurring program layer</p>
                 </article>
               ))}
             </div>
@@ -108,6 +113,7 @@ function Events() {
                   </div>
 
                   <div className="timeline-content">
+                    <p className="timeline-label">Event Log</p>
                     <h3>{event.title}</h3>
                     <p>{event.description}</p>
                   </div>

@@ -1,10 +1,11 @@
 import siteContent from "../data/siteContent";
 import SystemBanner from "../components/SystemBanner";
 import TelemetryStrip from "../components/TelemetryStrip";
+import ArchiveGallery from "../components/ArchiveGallery";
 
 function Resources() {
   return (
-    <section className="section page-section">
+    <section className="section page-section page-theme-resources">
       <div className="container">
         <div className="page-header">
           <p className="page-eyebrow">Resources</p>
@@ -44,6 +45,8 @@ function Resources() {
               },
             ]}
           />
+
+          <ArchiveGallery />
 
           <section className="section-panel">
             <div className="section-header-row">

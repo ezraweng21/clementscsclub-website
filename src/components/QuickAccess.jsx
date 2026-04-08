@@ -2,8 +2,11 @@ import siteContent from "../data/siteContent";
 
 function QuickAccessCard({ label, title, description, href, cta }) {
   return (
-    <article className="resource-card">
-      <p className="resource-label">{label}</p>
+    <article className="resource-card resource-card-structured">
+      <div className="card-topline">
+        <p className="resource-label">{label}</p>
+        <span className="card-code">link.ready()</span>
+      </div>
       <h3>{title}</h3>
       <p>{description}</p>
 
@@ -21,6 +24,8 @@ function QuickAccessCard({ label, title, description, href, cta }) {
           Link Coming Soon
         </span>
       )}
+
+      <p className="card-footer-note">club access point</p>
     </article>
   );
 }
@@ -38,20 +43,36 @@ function QuickAccess() {
         </div>
 
         <div className="content-grid three-col">
-          <article className="content-card">
+          <article className="content-card content-card-structured">
+            <div className="card-topline">
+              <span className="card-chip">schedule</span>
+              <span className="card-index">01</span>
+            </div>
             <h3>General Meetings</h3>
             <p>{siteContent.meetingInfo.shortSchedule}</p>
-            <p>Location: {siteContent.meetingInfo.location}</p>
+            <p className="card-footer-note">
+              Location: {siteContent.meetingInfo.location}
+            </p>
           </article>
 
-          <article className="content-card">
+          <article className="content-card content-card-structured">
+            <div className="card-topline">
+              <span className="card-chip">build</span>
+              <span className="card-index">02</span>
+            </div>
             <h3>Workshops & Build Sessions</h3>
             <p>{siteContent.meetingInfo.workshopSchedule}</p>
+            <p className="card-footer-note">practice, prep, and live sessions</p>
           </article>
 
-          <article className="content-card">
+          <article className="content-card content-card-structured">
+            <div className="card-topline">
+              <span className="card-chip">join</span>
+              <span className="card-index">03</span>
+            </div>
             <h3>Join the Club</h3>
             <p>{siteContent.meetingInfo.joinText}</p>
+            <p className="card-footer-note">open to all interested students</p>
           </article>
         </div>
 

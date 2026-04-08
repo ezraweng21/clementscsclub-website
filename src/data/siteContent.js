@@ -335,6 +335,12 @@ const siteContent = {
           "Structured lessons designed to help students strengthen technical thinking and prepare for competitive CS experiences.",
       },
       {
+        date: "Fall",
+        title: "Clements Computer Science Competition",
+        description:
+          "The club held its own Clements computer science competition as a featured fall event and competitive highlight.",
+      },
+      {
         date: "November",
         title: "Annual Thanksgiving Contest",
         description:
@@ -395,7 +401,7 @@ const siteContent = {
       title: "Join the Discord",
       description:
         "Primary place for joining updates, meeting reminders, and club communication.",
-      link: "",
+      link: "https://discord.gg/hf9FT3HVdJ",
     },
     {
       category: "Interest Form",
@@ -419,6 +425,28 @@ const siteContent = {
       link: "",
     },
   ],
+  galleryArchive: [
+    {
+      name: "meeting-archive",
+      type: "folder",
+      note: "Future event photos, snapshots, and club highlights",
+    },
+    {
+      name: "contest-files",
+      type: "folder",
+      note: "Packet visuals, contest moments, and team materials",
+    },
+    {
+      name: "member-projects",
+      type: "folder",
+      note: "Screenshots, demos, and project showcases from members",
+    },
+    {
+      name: "behind-the-scenes",
+      type: "folder",
+      note: "Officer planning, setup photos, and club culture moments",
+    },
+  ],
 
   contact: {
     generalEmail: "clementscsclub@gmail.com",
@@ -426,7 +454,7 @@ const siteContent = {
     sponsorEmail: "lubna.lorena@fortbendisd.gov",
     instagramHandle: "@chscsclub",
     remindCode: "TBD",
-    discordLink: "",
+    discordLink: "https://discord.gg/hf9FT3HVdJ",
     remindLink: "",
     instagramLink: "https://www.instagram.com/chscsclub/",
     interestFormLink: "",

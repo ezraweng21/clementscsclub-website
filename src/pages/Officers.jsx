@@ -4,7 +4,7 @@ import TelemetryStrip from "../components/TelemetryStrip";
 
 function Officers() {
   return (
-    <section className="section page-section">
+    <section className="section page-section page-theme-officers">
       <div className="container">
         <div className="page-header officer-page-header">
           <p className="page-eyebrow">Leadership</p>
@@ -52,7 +52,7 @@ function Officers() {
         <div className="officer-grid-compact">
           {siteContent.officers.map((officer, index) => (
             <article
-              className="officer-card-compact"
+              className="officer-card-compact officer-card-tight"
               key={`${officer.role}-${officer.name}-${index}`}
             >
               <div className="officer-image-shell">
