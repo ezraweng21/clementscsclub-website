@@ -1044,15 +1044,52 @@ body::after {
 
 .route-ambient-resources {
   background:
-    radial-gradient(circle at 50% 16%, rgba(85, 216, 255, 0.14), transparent 18%),
-    radial-gradient(circle at 80% 68%, rgba(85, 216, 255, 0.08), transparent 16%);
+    radial-gradient(circle at 50% 16%, rgba(85, 216, 255, 0.16), transparent 18%),
+    radial-gradient(circle at 80% 68%, rgba(85, 216, 255, 0.1), transparent 16%),
+    radial-gradient(circle at 18% 78%, rgba(127, 241, 210, 0.08), transparent 18%);
 }
 
 .ambient-holo-layer,
-.ambient-holo-beam {
+.ambient-holo-beam,
+.ambient-holo-grid,
+.ambient-holo-column,
+.ambient-holo-node {
   position: absolute;
+}
+
+.ambient-holo-layer,
+.ambient-holo-beam,
+.ambient-holo-node {
   left: 50%;
   transform: translateX(-50%);
+}
+
+.ambient-holo-grid {
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(85, 216, 255, 0.035) 0 1px, transparent 1px 36px),
+    repeating-linear-gradient(0deg, rgba(85, 216, 255, 0.03) 0 1px, transparent 1px 28px);
+  opacity: 0.52;
+}
+
+.ambient-holo-column {
+  top: 8%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(85, 216, 255, 0.24), transparent 92%);
+  box-shadow: 0 0 16px rgba(85, 216, 255, 0.18);
+}
+
+.ambient-holo-column.column-a {
+  left: 26%;
+}
+
+.ambient-holo-column.column-b {
+  left: 50%;
+}
+
+.ambient-holo-column.column-c {
+  left: 74%;
 }
 
 .ambient-holo-layer {
@@ -1093,48 +1130,247 @@ body::after {
   background: linear-gradient(180deg, rgba(85, 216, 255, 0.35), transparent 92%);
 }
 
+.ambient-holo-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(214, 248, 255, 0.95);
+  box-shadow: 0 0 18px rgba(85, 216, 255, 0.42);
+  animation: pulseGlow 4.8s ease-in-out infinite;
+}
+
+.ambient-holo-node.node-a {
+  top: 18%;
+}
+
+.ambient-holo-node.node-b {
+  top: 34%;
+  margin-left: 180px;
+  animation-delay: 0.9s;
+}
+
+.ambient-holo-node.node-c {
+  bottom: 24%;
+  margin-left: -220px;
+  animation-delay: 1.6s;
+}
+
+.ambient-holo-node.node-d {
+  bottom: 12%;
+  margin-left: 120px;
+  animation-delay: 2.2s;
+}
+
 .route-ambient-contact {
   background:
-    radial-gradient(circle at 18% 16%, rgba(255, 210, 138, 0.11), transparent 18%),
-    radial-gradient(circle at 82% 18%, rgba(140, 240, 216, 0.08), transparent 16%);
+    radial-gradient(circle at 18% 16%, rgba(255, 210, 138, 0.14), transparent 18%),
+    radial-gradient(circle at 82% 18%, rgba(140, 240, 216, 0.14), transparent 16%),
+    radial-gradient(circle at 50% 55%, rgba(140, 240, 216, 0.12), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(127, 208, 255, 0.08), transparent 28%);
 }
 
 .ambient-keyboard-field {
-  display: grid;
-  grid-template-columns: repeat(4, 82px);
-  gap: 1rem;
-  justify-content: end;
-  align-content: start;
-  padding: 10vh 8vw 0 0;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ambient-keyboard-glow,
+.ambient-keyboard-cable,
+.ambient-keyboard-row,
+.ambient-key,
+.ambient-floating-cap {
+  position: absolute;
+}
+
+.ambient-keyboard-glow {
+  border-radius: 50%;
+  filter: blur(12px);
+}
+
+.ambient-keyboard-glow.glow-a {
+  width: 720px;
+  height: 320px;
+  left: -4%;
+  top: 8%;
+  background: radial-gradient(circle, rgba(255, 210, 138, 0.16), transparent 68%);
+}
+
+.ambient-keyboard-glow.glow-b {
+  width: 1120px;
+  height: 520px;
+  right: -10%;
+  bottom: -2%;
+  background: radial-gradient(circle, rgba(140, 240, 216, 0.18), transparent 70%);
+}
+
+.ambient-keyboard-cable {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(140, 240, 216, 0.16), transparent);
+  box-shadow: 0 0 12px rgba(140, 240, 216, 0.12);
+}
+
+.ambient-keyboard-cable.cable-a {
+  top: 18%;
+  left: 0;
+  width: 48%;
+}
+
+.ambient-keyboard-cable.cable-b {
+  top: 24%;
+  right: 0;
+  width: 38%;
+}
+
+.ambient-keyboard-cable.cable-c {
+  bottom: 22%;
+  left: 8%;
+  width: 84%;
+}
+
+.ambient-keyboard-row {
+  display: flex;
+  gap: 0.82rem;
+  width: max-content;
+  left: -6%;
+  right: auto;
+  opacity: 0.92;
+  animation: driftKeys 18s linear infinite;
+}
+
+.ambient-keyboard-row.row-1 {
+  top: 7%;
+  transform: rotate(-5deg);
+  animation-duration: 24s;
+}
+
+.ambient-keyboard-row.row-2 {
+  top: 22%;
+  transform: rotate(3deg);
+  animation-duration: 28s;
+  animation-direction: reverse;
+}
+
+.ambient-keyboard-row.row-3 {
+  top: 38%;
+  transform: rotate(-3deg);
+  animation-duration: 22s;
+}
+
+.ambient-keyboard-row.row-4 {
+  top: 54%;
+  transform: rotate(4deg);
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+.ambient-keyboard-row.row-5 {
+  top: 70%;
+  transform: rotate(-2deg);
+  animation-duration: 26s;
+}
+
+.ambient-keyboard-row.row-6 {
+  top: 84%;
+  transform: rotate(2deg);
+  animation-duration: 34s;
+  animation-direction: reverse;
 }
 
 .ambient-key {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-width: 78px;
+  min-height: 78px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(140, 240, 216, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 62%),
+    rgba(10, 22, 32, 0.82);
+  box-shadow:
+    inset 0 -12px 18px rgba(0, 0, 0, 0.24),
+    0 12px 22px rgba(0, 0, 0, 0.16),
+    0 0 18px rgba(140, 240, 216, 0.08);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: rgba(222, 255, 249, 0.86);
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.ambient-key::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+
+.ambient-key.key-wide {
+  min-width: 116px;
+}
+
+.ambient-key.key-extra-wide {
+  min-width: 154px;
+}
+
+.ambient-key.key-accent {
+  border-color: rgba(140, 240, 216, 0.24);
+  background:
+    linear-gradient(180deg, rgba(140, 240, 216, 0.2), transparent 62%),
+    rgba(10, 22, 32, 0.88);
+  box-shadow:
+    inset 0 -10px 16px rgba(0, 0, 0, 0.22),
+    0 12px 18px rgba(0, 0, 0, 0.16),
+    0 0 22px rgba(140, 240, 216, 0.16);
+  color: #ecfffa;
+}
+
+.ambient-floating-cap {
   display: grid;
   place-items: center;
-  min-height: 74px;
-  border-radius: 18px;
-  border: 1px solid rgba(140, 240, 216, 0.2);
+  min-width: 180px;
+  min-height: 110px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(140, 240, 216, 0.18);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(7, 17, 26, 0.18)),
-    rgba(7, 17, 26, 0.78);
+    linear-gradient(180deg, rgba(140, 240, 216, 0.12), transparent 62%),
+    rgba(10, 22, 32, 0.84);
   box-shadow:
-    0 12px 24px rgba(0, 0, 0, 0.18),
-    0 0 22px rgba(140, 240, 216, 0.08);
+    inset 0 -14px 20px rgba(0, 0, 0, 0.24),
+    0 18px 28px rgba(0, 0, 0, 0.16),
+    0 0 28px rgba(140, 240, 216, 0.14);
   font-family: "IBM Plex Mono", "Consolas", monospace;
-  font-size: 0.76rem;
-  color: rgba(212, 255, 246, 0.82);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #effffb;
+  animation: floatCap 7s ease-in-out infinite;
+  opacity: 0.92;
 }
 
-.ambient-key.key-2,
-.ambient-key.key-5,
-.ambient-key.key-9 {
-  transform: translateY(18px);
+.ambient-floating-cap.cap-a {
+  top: 9%;
+  right: 12%;
+  transform: rotate(10deg);
 }
 
-.ambient-key.key-3,
-.ambient-key.key-7,
-.ambient-key.key-11 {
-  transform: translateY(-10px);
+.ambient-floating-cap.cap-b {
+  top: 44%;
+  left: 6%;
+  transform: rotate(-12deg);
+  animation-delay: 1.5s;
+}
+
+.ambient-floating-cap.cap-c {
+  bottom: 10%;
+  right: 18%;
+  min-width: 120px;
+  min-height: 92px;
+  transform: rotate(8deg);
+  animation-delay: 2.2s;
 }
 
 .route-ambient-about {
@@ -1235,6 +1471,38 @@ img {
 
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes floatKeyboard {
+  0%,
+  100% {
+    transform: var(--keyboard-base-transform) translateY(0);
+  }
+
+  50% {
+    transform: var(--keyboard-base-transform) translateY(-10px);
+  }
+}
+
+@keyframes driftKeys {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(10%);
+  }
+}
+
+@keyframes floatCap {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
   }
 }
 
@@ -2550,9 +2818,10 @@ img {
 }
 
 .archive-gallery {
-  padding: 1rem 1.05rem;
+  padding: 1.35rem 1.4rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 28%),
+    radial-gradient(circle at top right, rgba(85, 216, 255, 0.06), transparent 24%),
     rgba(7, 17, 26, 0.86);
 }
 
@@ -2568,7 +2837,10 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: none;
+  background:
+    linear-gradient(90deg, rgba(85, 216, 255, 0.04) 0 1px, transparent 1px 30px),
+    linear-gradient(0deg, rgba(85, 216, 255, 0.03) 0 1px, transparent 1px 24px);
+  opacity: 0.26;
   pointer-events: none;
 }
 
@@ -2585,13 +2857,54 @@ img {
 
 .archive-gallery-header h3,
 .join-portal-header h2 {
-  font-size: 1.2rem;
+  font-size: 1.36rem;
+}
+
+.archive-summary {
+  max-width: 60ch;
+  margin-top: 0.48rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.archive-status-cluster {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: end;
+}
+
+.archive-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.52rem 0.8rem;
+  border: 1px solid rgba(85, 216, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  letter-spacing: 0.04em;
+}
+
+.archive-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-cool);
+  box-shadow: 0 0 12px rgba(85, 216, 255, 0.6);
 }
 
 .join-portal-header,
 .join-portal-steps,
 .join-portal-links,
 .archive-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.archive-overview,
+.archive-layout {
   position: relative;
   z-index: 1;
 }
@@ -2609,32 +2922,133 @@ img {
   gap: 1rem;
 }
 
+.archive-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.archive-stat-tile {
+  padding: 1rem 1.05rem;
+  background: rgba(7, 17, 26, 0.7);
+  border: 1px solid rgba(127, 208, 255, 0.12);
+}
+
+.archive-stat-value {
+  margin-top: 0.24rem;
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.archive-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.archive-sidebar {
+  padding: 1.1rem 1.05rem;
+  background: rgba(7, 17, 26, 0.72);
+  border: 1px solid rgba(127, 208, 255, 0.12);
+}
+
+.archive-directory-list {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.9rem 0 1rem;
+}
+
+.archive-directory-row {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(127, 208, 255, 0.08);
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.archive-directory-index,
+.archive-card-index,
+.archive-card-tag,
+.archive-feed-line {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  letter-spacing: 0.08em;
+}
+
+.archive-directory-index {
+  color: var(--accent-cool);
+}
+
+.archive-feed {
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(127, 208, 255, 0.1);
+}
+
+.archive-feed-title {
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.archive-feed-line {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
 .join-portal-step,
 .join-portal-link-card,
 .archive-card {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
-  padding: 0.95rem;
+  padding: 1.2rem 1.1rem;
   background: rgba(7, 17, 26, 0.78);
   border: 1px solid rgba(127, 208, 255, 0.12);
 }
 
 .join-portal-link-card h3,
 .archive-name {
-  font-size: 0.95rem;
-  margin: 0.2rem 0 0.3rem;
+  font-size: 1.06rem;
+  margin: 0.28rem 0 0.25rem;
 }
 
 .join-portal-step p:last-child,
 .join-portal-link-card p:last-child,
 .archive-note {
   color: var(--text-soft);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
 .archive-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.archive-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.archive-card-index {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+}
+
+.archive-card-tag {
+  color: var(--accent);
+  font-size: 0.72rem;
 }
 
 .archive-folder-icon {
@@ -2666,6 +3080,32 @@ img {
 
 .archive-type {
   color: var(--accent-cool);
+  font-size: 0.72rem;
+  margin-bottom: 0.12rem;
+}
+
+.archive-card-meter {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding-top: 0.95rem;
+}
+
+.archive-card-meter span {
+  height: 4px;
+  background: linear-gradient(90deg, rgba(85, 216, 255, 0.82), rgba(127, 241, 210, 0.34));
+}
+
+.archive-card-meter span:nth-child(1) {
+  width: 24%;
+}
+
+.archive-card-meter span:nth-child(2) {
+  width: 42%;
+}
+
+.archive-card-meter span:nth-child(3) {
+  width: 18%;
 }
 
 .join-portal-status {
@@ -2687,13 +3127,13 @@ img {
 }
 
 .join-portal-steps {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 0;
 }
 
 .join-portal-step {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .join-portal-links {
@@ -2711,6 +3151,152 @@ img {
   transform: translateY(-4px);
   border-color: rgba(140, 240, 216, 0.28);
   background: rgba(10, 24, 36, 0.9);
+}
+
+.join-portal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.join-portal-copy-column {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.join-portal-screen,
+.join-portal-keyboard-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(127, 208, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 36%),
+    rgba(7, 17, 26, 0.82);
+}
+
+.join-portal-screen {
+  padding: 1rem 1.05rem;
+}
+
+.join-portal-screen-label {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+
+.join-portal-screen h3 {
+  font-size: 1.18rem;
+  margin-bottom: 0.38rem;
+}
+
+.join-portal-screen-text,
+.join-portal-display-line {
+  color: var(--text-soft);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.join-portal-keyboard-shell {
+  padding: 0.9rem 0.95rem 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(140, 240, 216, 0.08), transparent 20%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 36%),
+    rgba(7, 17, 26, 0.84);
+}
+
+.join-portal-keyboard-topbar {
+  display: flex;
+  gap: 0.42rem;
+  margin-bottom: 0.8rem;
+}
+
+.join-portal-keyboard-topbar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.join-portal-keyboard-topbar span:nth-child(1) {
+  background: #ff7e6d;
+}
+
+.join-portal-keyboard-topbar span:nth-child(2) {
+  background: #ffd166;
+}
+
+.join-portal-keyboard-topbar span:nth-child(3) {
+  background: #67ebc6;
+}
+
+.join-portal-keyboard-display {
+  margin-bottom: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(127, 208, 255, 0.1);
+  background: rgba(10, 22, 32, 0.74);
+}
+
+.join-portal-keyboard {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.join-portal-keyboard-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.join-key {
+  display: grid;
+  place-items: center;
+  min-height: 74px;
+  padding: 0.65rem;
+  border: 1px solid rgba(127, 208, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 60%),
+    rgba(11, 23, 34, 0.88);
+  color: var(--text);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.join-key:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 240, 216, 0.28);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+.join-key-action {
+  background:
+    linear-gradient(180deg, rgba(140, 240, 216, 0.12), transparent 60%),
+    rgba(11, 23, 34, 0.92);
+  border-color: rgba(140, 240, 216, 0.18);
+  color: #e9fff8;
+}
+
+.join-key-enter {
+  background:
+    linear-gradient(180deg, rgba(255, 210, 138, 0.14), transparent 60%),
+    rgba(11, 23, 34, 0.92);
+  border-color: rgba(255, 210, 138, 0.24);
+}
+
+.join-key-step {
+  color: var(--accent-cool);
 }
 
 .officer-page-full {
@@ -2931,6 +3517,10 @@ img {
   margin: 0 auto;
 }
 
+.page-theme-resources .events-layout {
+  max-width: 1080px;
+}
+
 .timeline-intro {
   max-width: 780px;
 }
@@ -3023,8 +3613,16 @@ img {
 .page-theme-contact .section-panel {
   background:
     linear-gradient(180deg, rgba(255, 215, 163, 0.04), transparent 42%),
-    rgba(28, 52, 69, 0.5);
+    rgba(28, 52, 69, 0.34);
   border-right: 1px solid rgba(255, 215, 163, 0.2);
+}
+
+.page-theme-contact .system-banner,
+.page-theme-contact .join-portal-panel,
+.page-theme-contact .telemetry-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 38%),
+    rgba(22, 41, 54, 0.44);
 }
 
 .page-theme-events .system-banner {
@@ -3092,6 +3690,36 @@ img {
   .resource-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .archive-overview {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .archive-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-sidebar {
+    order: 2;
+  }
+
+  .ambient-keyboard-row {
+    gap: 0.65rem;
+  }
+
+  .ambient-key {
+    min-width: 68px;
+    min-height: 68px;
+    font-size: 0.72rem;
+  }
+
+  .ambient-key.key-wide {
+    min-width: 102px;
+  }
+
+  .ambient-key.key-extra-wide {
+    min-width: 134px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -3138,6 +3766,16 @@ img {
   .section-header-row {
     flex-direction: column;
     align-items: start;
+  }
+
+  .archive-gallery-header,
+  .join-portal-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .archive-status-cluster {
+    justify-items: start;
   }
 }
 
@@ -3220,8 +3858,37 @@ img {
     align-items: start;
   }
 
+  .archive-overview {
+    grid-template-columns: 1fr;
+  }
+
   .events-layout {
     gap: 0.9rem;
+  }
+
+  .ambient-keyboard-row {
+    gap: 0.52rem;
+  }
+
+  .ambient-key {
+    min-width: 52px;
+    min-height: 52px;
+    font-size: 0.58rem;
+  }
+
+  .ambient-key.key-wide {
+    min-width: 82px;
+  }
+
+  .ambient-key.key-extra-wide {
+    min-width: 108px;
+  }
+
+  .ambient-floating-cap {
+    min-width: 120px;
+    min-height: 74px;
+    font-size: 0.78rem;
+    opacity: 0.82;
   }
 }
 
@@ -3246,6 +3913,9 @@ img {
   .ambient-circuit-ring,
   .ambient-circuit-core,
   .ambient-circuit-chip,
+  .ambient-holo-node,
+  .ambient-keyboard-row,
+  .ambient-floating-cap,
   .join-portal-status-dot,
   .terminal-card {
     animation: none;

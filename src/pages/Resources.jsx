@@ -19,11 +19,11 @@ function Resources() {
 
         <div className="events-layout">
           <SystemBanner
-            eyebrow="Resource Network"
-            title="Club Links, Materials, and Access Points"
-            text="This page acts like a central command panel for the club's live links now, while still leaving room for future forms, gallery content, and competition materials."
-            chips={["drive", "dues", "socials"]}
-            code="resources.mount('/club-hub');"
+            eyebrow="Club Resources"
+            title="Links, Materials, and Future Media in One Place"
+            text="This page keeps the most important club links easy to find now while also reserving space for future photos, gallery content, and competition materials."
+            chips={["links", "materials", "gallery"]}
+            code="resources / links / archive"
           />
 
           <TelemetryStrip

@@ -1,5 +1,14 @@
 import CircuitBoardBackdrop from "./CircuitBoardBackdrop";
 
+const contactKeyboardRows = [
+  ["ESC", "TAB", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "JOIN", "ENTER"],
+  ["CTRL", "SHIFT", "A", "S", "D", "F", "G", "H", "J", "K", "L", "EMAIL", "OPEN"],
+  ["ALT", "Z", "X", "C", "V", "B", "N", "M", "DISCORD", "UPDATES", "FRIDAY", "ROOM"],
+  ["LINK", "CODE", "TEAM", "BUILD", "MEET", "CS", "CLUB", "JOIN", "EMAIL", "IG", "OPEN"],
+  ["SPACE", "MEMBERS", "PROJECTS", "CONTACT", "FRIDAY", "AFTERSCHOOL", "DISCORD"],
+  ["HELLO", "JOIN", "START", "ENTER", "REMIND", "NEWS", "EMAIL", "DISCORD", "CS"],
+];
+
 function RouteAmbientBackground({ variant }) {
   return (
     <div className={`route-ambient route-ambient-${variant}`} aria-hidden="true">
@@ -23,23 +32,50 @@ function RouteAmbientBackground({ variant }) {
 
       {variant === "resources" ? (
         <div className="ambient-hologram-field">
+          <span className="ambient-holo-grid"></span>
+          <span className="ambient-holo-column column-a"></span>
+          <span className="ambient-holo-column column-b"></span>
+          <span className="ambient-holo-column column-c"></span>
           <span className="ambient-holo-layer holo-a"></span>
           <span className="ambient-holo-layer holo-b"></span>
           <span className="ambient-holo-layer holo-c"></span>
           <span className="ambient-holo-layer holo-d"></span>
+          <span className="ambient-holo-node node-a"></span>
+          <span className="ambient-holo-node node-b"></span>
+          <span className="ambient-holo-node node-c"></span>
+          <span className="ambient-holo-node node-d"></span>
           <span className="ambient-holo-beam"></span>
         </div>
       ) : null}
 
       {variant === "contact" ? (
         <div className="ambient-keyboard-field">
-          {["J", "O", "I", "N", "C", "S", "L", "I", "N", "K", "T", "E"].map(
-            (key, index) => (
-              <span className={`ambient-key key-${index + 1}`} key={`${key}-${index}`}>
-                {key}
-              </span>
-            ),
-          )}
+          <span className="ambient-keyboard-glow glow-a"></span>
+          <span className="ambient-keyboard-glow glow-b"></span>
+          <span className="ambient-keyboard-cable cable-a"></span>
+          <span className="ambient-keyboard-cable cable-b"></span>
+          <span className="ambient-keyboard-cable cable-c"></span>
+          <span className="ambient-floating-cap cap-a">ENTER</span>
+          <span className="ambient-floating-cap cap-b">JOIN</span>
+          <span className="ambient-floating-cap cap-c">CS</span>
+          {contactKeyboardRows.map((row, rowIndex) => (
+            <div className={`ambient-keyboard-row row-${rowIndex + 1}`} key={`contact-row-${rowIndex}`}>
+              {row.map((key, keyIndex) => (
+                <span
+                  className={`ambient-key ${
+                    key === "JOIN" || key === "DISCORD" || key === "EMAIL" || key === "UPDATES"
+                      ? "key-accent"
+                      : ""
+                  } ${
+                    key.length >= 8 ? "key-extra-wide" : key.length >= 5 ? "key-wide" : ""
+                  }`}
+                  key={`${key}-${rowIndex}-${keyIndex}`}
+                >
+                  {key}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       ) : null}
 
