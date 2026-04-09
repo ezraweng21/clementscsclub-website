@@ -19,11 +19,11 @@ function Officers() {
         <div className="officer-grid-compact">
           <div className="officer-page-full">
             <SystemBanner
-              eyebrow="Leadership Matrix"
-              title="A Large Team Running the Club"
-              text="The leadership side of the site now feels more like an internal systems board, showing how presidents, coaches, support roles, and organizers all fit together."
-              chips={["22 officers", "coaching", "operations"]}
-              code="leadership.map(role => supportMembers(role));"
+              eyebrow="Leadership Roster"
+              title="A Team of Officers, Coaches, and Organizers"
+              text="This page is meant to read like a clean leadership directory, showing how presidents, coaches, support roles, and contest organizers all contribute to the club."
+              chips={["22 officers", "coaches", "club ops"]}
+              code="leadership / roster / active"
             />
 
             <TelemetryStrip
@@ -34,14 +34,14 @@ function Officers() {
                   text: "A broad officer and coaching team helps distribute work and support members.",
                 },
                 {
-                  label: "Contest Roles",
-                  value: "THANKSGIVING READY",
-                  text: "Seasonal contest leadership can be highlighted within the broader officer structure.",
+                  label: "Role Coverage",
+                  value: "MEETINGS TO CONTESTS",
+                  text: "The roster covers weekly meetings, coaching, communication, and seasonal events.",
                 },
                 {
-                  label: "Coverage",
-                  value: "MEETINGS TO SYSTEMS",
-                  text: "Roles span presidents, coaches, sys admins, historian, and secretary support.",
+                  label: "Structure",
+                  value: "PRESIDENTS + SUPPORT",
+                  text: "Roles span presidents, coaches, sys admins, historian, secretary, and support leadership.",
                 },
               ]}
             />
@@ -70,11 +70,18 @@ function Officers() {
               </div>
 
               <div className="officer-info-compact">
+                <div className="officer-record-topline">
+                  <span className="officer-record-id">
+                    ID-{(index + 1).toString().padStart(2, "0")}
+                  </span>
+                  <span className="officer-record-status">active roster</span>
+                </div>
                 <p className="officer-role-compact">{officer.role}</p>
                 <h2 className="officer-name-compact">{officer.name}</h2>
                 {officer.grade ? (
                   <p className="officer-grade-compact">Grade {officer.grade}</p>
                 ) : null}
+                <p className="officer-record-note">leadership directory</p>
               </div>
             </article>
           ))}

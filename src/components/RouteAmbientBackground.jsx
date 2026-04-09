@@ -19,14 +19,29 @@ function RouteAmbientBackground({ variant }) {
       ) : null}
 
       {variant === "officers" ? (
-        <div className="ambient-chip-field">
-          <div className="ambient-chip-core">
-            <div className="ambient-chip-inner"></div>
+        <div className="ambient-leadership-field">
+          <span className="ambient-leadership-grid"></span>
+          <span className="ambient-leadership-line line-a"></span>
+          <span className="ambient-leadership-line line-b"></span>
+          <span className="ambient-leadership-line line-c"></span>
+          <div className="ambient-dossier-card card-a">
+            <span className="ambient-dossier-topline"></span>
+            <span className="ambient-dossier-label">Leadership</span>
+            <span className="ambient-dossier-title">Command Roster</span>
+            <span className="ambient-dossier-meta">22 roles / student team</span>
           </div>
-          <span className="ambient-chip-trace trace-top"></span>
-          <span className="ambient-chip-trace trace-right"></span>
-          <span className="ambient-chip-trace trace-bottom"></span>
-          <span className="ambient-chip-trace trace-left"></span>
+          <div className="ambient-dossier-card card-b">
+            <span className="ambient-dossier-topline"></span>
+            <span className="ambient-dossier-label">Operations</span>
+            <span className="ambient-dossier-title">Coaches + Officers</span>
+            <span className="ambient-dossier-meta">meetings / lessons / contests</span>
+          </div>
+          <div className="ambient-dossier-card card-c">
+            <span className="ambient-dossier-topline"></span>
+            <span className="ambient-dossier-label">Support</span>
+            <span className="ambient-dossier-title">Club Systems</span>
+            <span className="ambient-dossier-meta">admins / historian / secretary</span>
+          </div>
         </div>
       ) : null}
 
@@ -58,14 +73,19 @@ function RouteAmbientBackground({ variant }) {
           <span className="ambient-floating-cap cap-a">ENTER</span>
           <span className="ambient-floating-cap cap-b">JOIN</span>
           <span className="ambient-floating-cap cap-c">CS</span>
-            {contactKeyboardRows.map((row, rowIndex) => (
-              <div className={`ambient-keyboard-row row-${rowIndex + 1}`} key={`contact-row-${rowIndex}`}>
-                {row.map((key, keyIndex) => (
-                  <span
-                    className={`ambient-key ${
-                      key === "JOIN" || key === "DISCORD" || key === "EMAIL" || key === "UPDATES"
-                        ? "key-accent"
-                        : ""
+          {contactKeyboardRows.map((row, rowIndex) => (
+            <div
+              className={`ambient-keyboard-row row-${rowIndex + 1} ${
+                rowIndex % 2 === 1 ? "row-reverse" : "row-forward"
+              }`}
+              key={`contact-row-${rowIndex}`}
+            >
+              {row.map((key, keyIndex) => (
+                <span
+                  className={`ambient-key ${
+                    key === "JOIN" || key === "DISCORD" || key === "EMAIL" || key === "UPDATES"
+                      ? "key-accent"
+                      : ""
                     } ${
                       key === "JOIN" || key === "DISCORD"
                         ? "key-glow-cyan"
@@ -79,8 +99,8 @@ function RouteAmbientBackground({ variant }) {
                     }`}
                     key={`${key}-${rowIndex}-${keyIndex}`}
                   >
-                  {key}
-                </span>
+                    {key}
+                  </span>
               ))}
             </div>
           ))}
