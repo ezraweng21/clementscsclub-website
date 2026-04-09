@@ -1,7 +1,6 @@
 import siteContent from "../data/siteContent";
 import SystemBanner from "../components/SystemBanner";
 import TelemetryStrip from "../components/TelemetryStrip";
-import ArchiveGallery from "../components/ArchiveGallery";
 
 function Resources() {
   return (
@@ -12,7 +11,7 @@ function Resources() {
           <h1>Resources for Members</h1>
           <p className="section-text">
             Use this page as a central place for club links, public materials,
-            dues information, communication channels, and future member
+            dues information, communication channels, and shared member
             resources.
           </p>
         </div>
@@ -20,33 +19,31 @@ function Resources() {
         <div className="events-layout">
           <SystemBanner
             eyebrow="Club Resources"
-            title="Links, Materials, and Future Media in One Place"
-            text="This page keeps the most important club links easy to find now while also reserving space for future photos, gallery content, and competition materials."
-            chips={["links", "materials", "gallery"]}
-            code="resources / links / archive"
+            title="Links, Materials, and Member Access"
+            text="This page keeps the most important live club links easy to find, including Discord, the interest form, dues, shared materials, and official contact channels."
+            chips={["discord", "drive", "interest form"]}
+            code="resources / links / active"
           />
 
           <TelemetryStrip
             items={[
               {
                 label: "Live Links",
-                value: "DRIVE + DUES + IG",
-                text: "The main public links are already active and easy to reach from one place.",
+                value: "DRIVE + DISCORD + FORM",
+                text: "The main join and resource links are active and easy to reach from one place.",
               },
               {
-                label: "Next Up",
-                value: "DISCORD + FORMS",
-                text: "Communication and sign-up links can slide in later without changing the page layout.",
+                label: "Meetings",
+                value: "FRIDAY AFTER SCHOOL",
+                text: "Members can use these links to stay connected before and after weekly meetings.",
               },
               {
-                label: "Expansion",
-                value: "GALLERY READY",
-                text: "The design leaves room for a future member gallery and more club content.",
+                label: "Materials",
+                value: "SHARED DRIVE",
+                text: "Slides and lesson materials are organized through the shared club drive.",
               },
             ]}
           />
-
-          <ArchiveGallery />
 
           <section className="section-panel">
             <div className="section-header-row">
@@ -57,16 +54,17 @@ function Resources() {
             </div>
 
             <div className="resource-grid">
-              {siteContent.resources.map((resource, index) => (
-                <article
-                  className="resource-card"
-                  key={`${resource.category}-${resource.title}-${index}`}
-                >
-                  <p className="resource-label">{resource.category}</p>
-                  <h3>{resource.title}</h3>
-                  <p>{resource.description}</p>
+              {siteContent.resources
+                .filter((resource) => resource.link)
+                .map((resource, index) => (
+                  <article
+                    className="resource-card"
+                    key={`${resource.category}-${resource.title}-${index}`}
+                  >
+                    <p className="resource-label">{resource.category}</p>
+                    <h3>{resource.title}</h3>
+                    <p>{resource.description}</p>
 
-                  {resource.link ? (
                     <a
                       href={resource.link}
                       className="resource-link"
@@ -75,19 +73,13 @@ function Resources() {
                     >
                       Open Resource
                     </a>
-                  ) : (
-                    <span className="resource-link resource-link-disabled">
-                      Link Coming Soon
-                    </span>
-                  )}
-                </article>
-              ))}
+                  </article>
+                ))}
             </div>
 
             <p className="resource-note">
-              The shared drive, dues link, email, and Instagram are live.
-              Discord, forms, contest materials, and the future member gallery
-              can stay as polished placeholders until final links are ready.
+              Only finalized links are shown here so the page stays clean and
+              useful for members.
             </p>
           </section>
         </div>

@@ -128,7 +128,7 @@ function About() {
                 </div>
                 <h3>Where</h3>
                 <p>{siteContent.meetingInfo.location}</p>
-                <p className="card-footer-note">room info can be updated later</p>
+                <p className="card-footer-note">Room 2824 and Room 2010</p>
               </article>
 
               <article className="card card-structured">

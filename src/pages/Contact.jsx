@@ -106,7 +106,7 @@ function Contact() {
                 </div>
                 <h3>Location</h3>
                 <p>{siteContent.meetingInfo.location}</p>
-                <p className="card-footer-note">final room number still TBD</p>
+                <p className="card-footer-note">rooms confirmed for weekly meetings</p>
               </article>
             </div>
           </section>
@@ -131,8 +131,17 @@ function Contact() {
 
               <article className="card card-structured">
                 <div className="card-topline">
-                  <span className="card-chip">social</span>
+                  <span className="card-chip">discord</span>
                   <span className="card-index">02</span>
+                </div>
+                <h3>Discord</h3>
+                <p>{siteContent.contact.discordLink}</p>
+              </article>
+
+              <article className="card card-structured">
+                <div className="card-topline">
+                  <span className="card-chip">social</span>
+                  <span className="card-index">03</span>
                 </div>
                 <h3>Instagram</h3>
                 <p>{siteContent.contact.instagramHandle}</p>
@@ -140,17 +149,17 @@ function Contact() {
 
               <article className="card card-structured">
                 <div className="card-topline">
-                  <span className="card-chip">updates</span>
-                  <span className="card-index">03</span>
+                  <span className="card-chip">form</span>
+                  <span className="card-index">04</span>
                 </div>
-                <h3>Remind</h3>
-                <p>{siteContent.contact.remindCode}</p>
+                <h3>Interest Form</h3>
+                <p>{siteContent.contact.interestFormLink}</p>
               </article>
 
               <article className="card card-structured">
                 <div className="card-topline">
                   <span className="card-chip">faculty</span>
-                  <span className="card-index">04</span>
+                  <span className="card-index">05</span>
                 </div>
                 <h3>Sponsor</h3>
                 <p>{siteContent.contact.sponsorName}</p>
@@ -159,19 +168,10 @@ function Contact() {
               <article className="card card-structured">
                 <div className="card-topline">
                   <span className="card-chip">contact</span>
-                  <span className="card-index">05</span>
+                  <span className="card-index">06</span>
                 </div>
                 <h3>Sponsor Email</h3>
                 <p>{siteContent.contact.sponsorEmail}</p>
-              </article>
-
-              <article className="card card-structured">
-                <div className="card-topline">
-                  <span className="card-chip">hub</span>
-                  <span className="card-index">06</span>
-                </div>
-                <h3>Linktree</h3>
-                <p>{siteContent.contact.linktree}</p>
               </article>
             </div>
           </section>

@@ -3,6 +3,8 @@ import SystemBanner from "../components/SystemBanner";
 import TelemetryStrip from "../components/TelemetryStrip";
 
 function Officers() {
+  const showOfficerPhotos = false;
+
   return (
     <section className="section page-section page-theme-officers">
       <div className="container">
@@ -56,7 +58,7 @@ function Officers() {
               key={`${officer.role}-${officer.name}-${index}`}
             >
               <div className="officer-image-shell">
-                {officer.image ? (
+                {showOfficerPhotos && officer.image ? (
                   <img
                     src={officer.image}
                     alt={`${officer.name} - ${officer.role}`}

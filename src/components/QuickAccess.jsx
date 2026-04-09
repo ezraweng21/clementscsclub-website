@@ -10,7 +10,7 @@ function QuickAccessCard({ label, title, description, href, cta }) {
       <h3>{title}</h3>
       <p>{description}</p>
 
-      {href ? (
+      {href && (
         <a
           href={href}
           className="resource-link"
@@ -19,10 +19,6 @@ function QuickAccessCard({ label, title, description, href, cta }) {
         >
           {cta}
         </a>
-      ) : (
-        <span className="resource-link resource-link-disabled">
-          Link Coming Soon
-        </span>
       )}
 
       <p className="card-footer-note">club access point</p>
@@ -86,17 +82,17 @@ function QuickAccess() {
           />
 
           <QuickAccessCard
-            label="Remind"
-            title="Join Remind"
-            description={`Use code ${siteContent.contact.remindCode} for club reminders.`}
-            href={siteContent.contact.remindLink}
+            label="Instagram"
+            title="Follow Instagram"
+            description="Follow the club Instagram for updates, announcements, and event highlights."
+            href={siteContent.contact.instagramLink}
             cta="Open Link"
           />
 
           <QuickAccessCard
             label="Interest Form"
             title="Sign Up"
-            description="Fill out the interest form once the CS Club signup is published."
+            description="Fill out the interest form so the club can keep track of new and returning members."
             href={siteContent.contact.interestFormLink}
             cta="Open Form"
           />

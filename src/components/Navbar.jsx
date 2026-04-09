@@ -4,6 +4,7 @@ import siteContent from "../data/siteContent";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const logoSrc = "/images/csclub-logo.webp";
 
   const getLinkClass = ({ isActive }) =>
     isActive ? "nav-link active-link" : "nav-link";
@@ -16,7 +17,9 @@ function Navbar() {
     <header className="navbar">
       <div className="container navbar-content">
         <NavLink to="/" className="logo" onClick={handleCloseMenu}>
-          <span className="logo-mark">&lt;/&gt;</span>
+          <span className="logo-mark" aria-hidden="true">
+            <img src={logoSrc} alt="" />
+          </span>
           <span className="logo-text">{siteContent.club.name}</span>
         </NavLink>
 

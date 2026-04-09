@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import siteContent from "../data/siteContent";
 
 function Hero() {
+  const logoSrc = "/images/csclub-logo.webp";
+
   return (
     <section className="hero">
       <div className="hero-grid-overlay" aria-hidden="true"></div>
@@ -46,6 +48,17 @@ function Hero() {
               </div>
 
               <div className="terminal-body">
+                <div className="hero-brand-lockup">
+                  <div className="hero-brand-badge" aria-hidden="true">
+                    <img src={logoSrc} alt="" />
+                  </div>
+
+                  <div className="hero-brand-copy">
+                    <p className="hero-brand-name">{siteContent.club.shortName}</p>
+                    <span className="hero-brand-subtitle">clements.cs</span>
+                  </div>
+                </div>
+
                 <p className="feature-label">{siteContent.club.tagline}</p>
 
                 <div className="terminal-lines">

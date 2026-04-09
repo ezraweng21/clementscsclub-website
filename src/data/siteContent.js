@@ -3,7 +3,7 @@ const siteContent = {
     name: "Computer Science Club",
     shortName: "CS Club",
     school: "William P. Clements High School",
-    tagline: "Coding in progress...",
+    tagline: "Building, competing, and exploring computer science.",
     description:
       "Computer Science Club at William P. Clements High School is a student-led community built around fun, interactive computer science activities, technical exploration, and competition-focused learning. From beginner-friendly topics and collaborative challenges to more advanced lessons and coaching, the club creates a space where students can build skills, stay curious, and grow together through computer science.",
   },
@@ -14,9 +14,9 @@ const siteContent = {
     shortSchedule: "General meetings: every Friday after school",
     workshopSchedule:
       "Competition lessons, coaching, and special sessions: scheduled throughout the semester",
-    location: "Lorena / Fugel room (room number TBD)",
+    location: "Room 2824 (Lorena) and Room 2010 (Fugel)",
     joinText:
-      "Anyone can attend, and students currently in a computer science class are especially encouraged to come. The best way to stay updated is by joining the club Discord.",
+      "Anyone can attend, and students currently in a computer science class are especially encouraged to come. A laptop is recommended but not required, and the best way to stay updated is by joining the club Discord.",
   },
 
   join: {
@@ -335,16 +335,16 @@ const siteContent = {
           "Structured lessons designed to help students strengthen technical thinking and prepare for competitive CS experiences.",
       },
       {
-        date: "Fall",
+        date: "November 22, 2025",
         title: "Clements Computer Science Competition",
         description:
-          "The club held its own Clements computer science competition as a featured fall event and competitive highlight.",
+          "Annual school-hosted programming competition featuring algorithmic problem solving and team-based contests.",
       },
       {
-        date: "November",
-        title: "Annual Thanksgiving Contest",
+        date: "Fall",
+        title: "Thanksgiving Contest Preparation",
         description:
-          "A major seasonal contest supported by packet leads, coaches, and the broader officer team.",
+          "Contest preparation and packet-writing support led by officers, lead coaches, and coaches.",
       },
       {
         date: "Spring",
@@ -379,7 +379,7 @@ const siteContent = {
       category: "Dues",
       title: "RevTrak Club Dues",
       description:
-        "Temporary dues/payment link for next year and other future club logistics.",
+        "RevTrak payment link for club dues and related club logistics.",
       link: "https://fortbendisd.revtrak.net/FBISD-Schools-1082/hs/CHS/chs-computer-science/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnakOCsPdYqf0fvbgJgGde7emhDRfW2Xv2JYkqwFUXhSKNND6OIKrIUGYSkMU_aem_rGzcstSWy1cYtNVsadurRA#/v/chs-computer-science-club-dues",
     },
     {
@@ -407,58 +407,28 @@ const siteContent = {
       category: "Interest Form",
       title: "Interest Form",
       description:
-        "Placeholder for a future sign-up form once the next version is published.",
-      link: "",
+        "Fill out the interest form so the club can keep track of new and returning members.",
+      link: "https://forms.gle/uyRdZWg35vkKc51S7",
     },
     {
-      category: "Member Gallery",
-      title: "Gallery and Club Memories",
+      category: "Slides",
+      title: "Slides and Lesson Materials",
       description:
-        "Placeholder for member photos, event snapshots, and a future visual gallery section.",
-      link: "",
-    },
-    {
-      category: "Competition",
-      title: "Contest and Training Materials",
-      description:
-        "Placeholder for packet links, practice resources, and future competition materials.",
-      link: "",
+        "Shared drive folder for slides, lesson materials, and club resources.",
+      link: "https://drive.google.com/drive/folders/1l-jrvwEIcd25lVJ-hMKcQA8JhuZncTeX?usp=sharing",
     },
   ],
-  galleryArchive: [
-    {
-      name: "meeting-archive",
-      type: "folder",
-      note: "Future event photos, snapshots, and club highlights",
-    },
-    {
-      name: "contest-files",
-      type: "folder",
-      note: "Packet visuals, contest moments, and team materials",
-    },
-    {
-      name: "member-projects",
-      type: "folder",
-      note: "Screenshots, demos, and project showcases from members",
-    },
-    {
-      name: "behind-the-scenes",
-      type: "folder",
-      note: "Officer planning, setup photos, and club culture moments",
-    },
-  ],
-
   contact: {
     generalEmail: "clementscsclub@gmail.com",
     sponsorName: "Lubna Lorena",
     sponsorEmail: "lubna.lorena@fortbendisd.gov",
     instagramHandle: "@chscsclub",
-    remindCode: "TBD",
+    remindCode: "",
     discordLink: "https://discord.gg/hf9FT3HVdJ",
     remindLink: "",
     instagramLink: "https://www.instagram.com/chscsclub/",
-    interestFormLink: "",
-    linktree: "TBD",
+    interestFormLink: "https://forms.gle/uyRdZWg35vkKc51S7",
+    linktree: "",
   },
 };
 
