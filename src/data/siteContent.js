@@ -410,13 +410,6 @@ const siteContent = {
         "Fill out the interest form so the club can keep track of new and returning members.",
       link: "https://forms.gle/uyRdZWg35vkKc51S7",
     },
-    {
-      category: "Slides",
-      title: "Slides and Lesson Materials",
-      description:
-        "Shared drive folder for slides, lesson materials, and club resources.",
-      link: "https://drive.google.com/drive/folders/1l-jrvwEIcd25lVJ-hMKcQA8JhuZncTeX?usp=sharing",
-    },
   ],
   contact: {
     generalEmail: "clementscsclub@gmail.com",
