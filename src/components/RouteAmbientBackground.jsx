@@ -58,19 +58,27 @@ function RouteAmbientBackground({ variant }) {
           <span className="ambient-floating-cap cap-a">ENTER</span>
           <span className="ambient-floating-cap cap-b">JOIN</span>
           <span className="ambient-floating-cap cap-c">CS</span>
-          {contactKeyboardRows.map((row, rowIndex) => (
-            <div className={`ambient-keyboard-row row-${rowIndex + 1}`} key={`contact-row-${rowIndex}`}>
-              {row.map((key, keyIndex) => (
-                <span
-                  className={`ambient-key ${
-                    key === "JOIN" || key === "DISCORD" || key === "EMAIL" || key === "UPDATES"
-                      ? "key-accent"
-                      : ""
-                  } ${
-                    key.length >= 8 ? "key-extra-wide" : key.length >= 5 ? "key-wide" : ""
-                  }`}
-                  key={`${key}-${rowIndex}-${keyIndex}`}
-                >
+            {contactKeyboardRows.map((row, rowIndex) => (
+              <div className={`ambient-keyboard-row row-${rowIndex + 1}`} key={`contact-row-${rowIndex}`}>
+                {row.map((key, keyIndex) => (
+                  <span
+                    className={`ambient-key ${
+                      key === "JOIN" || key === "DISCORD" || key === "EMAIL" || key === "UPDATES"
+                        ? "key-accent"
+                        : ""
+                    } ${
+                      key === "JOIN" || key === "DISCORD"
+                        ? "key-glow-cyan"
+                        : key === "EMAIL" || key === "ENTER"
+                          ? "key-glow-warm"
+                          : key === "SPACE" || key === "AFTERSCHOOL" || key === "FRIDAY"
+                            ? "key-outline"
+                            : ""
+                    } ${
+                      key.length >= 8 ? "key-extra-wide" : key.length >= 5 ? "key-wide" : ""
+                    }`}
+                    key={`${key}-${rowIndex}-${keyIndex}`}
+                  >
                   {key}
                 </span>
               ))}

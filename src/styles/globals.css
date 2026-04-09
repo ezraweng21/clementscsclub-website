@@ -1308,6 +1308,15 @@ body::after {
   border-radius: 6px;
 }
 
+.ambient-key::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 46%);
+  border-radius: inherit;
+  opacity: 0.55;
+}
+
 .ambient-key.key-wide {
   min-width: 116px;
 }
@@ -1326,6 +1335,41 @@ body::after {
     0 12px 18px rgba(0, 0, 0, 0.16),
     0 0 22px rgba(140, 240, 216, 0.16);
   color: #ecfffa;
+}
+
+.ambient-key.key-glow-cyan {
+  border-color: rgba(140, 240, 216, 0.34);
+  background:
+    linear-gradient(180deg, rgba(140, 240, 216, 0.26), transparent 58%),
+    rgba(10, 22, 32, 0.9);
+  box-shadow:
+    inset 0 -12px 18px rgba(0, 0, 0, 0.22),
+    0 14px 22px rgba(0, 0, 0, 0.16),
+    0 0 30px rgba(140, 240, 216, 0.24);
+  color: #f2fffb;
+}
+
+.ambient-key.key-glow-warm {
+  border-color: rgba(255, 210, 138, 0.32);
+  background:
+    linear-gradient(180deg, rgba(255, 210, 138, 0.24), transparent 58%),
+    rgba(18, 24, 30, 0.92);
+  box-shadow:
+    inset 0 -12px 18px rgba(0, 0, 0, 0.24),
+    0 14px 22px rgba(0, 0, 0, 0.16),
+    0 0 28px rgba(255, 210, 138, 0.2);
+  color: #fff7ea;
+}
+
+.ambient-key.key-outline {
+  border-color: rgba(127, 208, 255, 0.24);
+  background:
+    linear-gradient(180deg, rgba(127, 208, 255, 0.12), transparent 58%),
+    rgba(10, 22, 32, 0.82);
+  box-shadow:
+    inset 0 -10px 16px rgba(0, 0, 0, 0.22),
+    0 10px 18px rgba(0, 0, 0, 0.14),
+    0 0 18px rgba(127, 208, 255, 0.12);
 }
 
 .ambient-floating-cap {
@@ -3613,7 +3657,7 @@ img {
 .page-theme-contact .section-panel {
   background:
     linear-gradient(180deg, rgba(255, 215, 163, 0.04), transparent 42%),
-    rgba(28, 52, 69, 0.34);
+    rgba(28, 52, 69, 0.58);
   border-right: 1px solid rgba(255, 215, 163, 0.2);
 }
 
@@ -3622,7 +3666,18 @@ img {
 .page-theme-contact .telemetry-card {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 38%),
-    rgba(22, 41, 54, 0.44);
+    rgba(22, 41, 54, 0.64);
+}
+
+.page-theme-contact .system-banner-panel,
+.page-theme-contact .join-portal-step,
+.page-theme-contact .join-portal-link-card,
+.page-theme-contact .card,
+.page-theme-contact .content-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 42%),
+    rgba(10, 24, 35, 0.72);
+  border-color: rgba(176, 217, 243, 0.16);
 }
 
 .page-theme-events .system-banner {
