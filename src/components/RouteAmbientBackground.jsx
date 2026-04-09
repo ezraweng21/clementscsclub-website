@@ -1,18 +1,11 @@
+import CircuitBoardBackdrop from "./CircuitBoardBackdrop";
+
 function RouteAmbientBackground({ variant }) {
   return (
     <div className={`route-ambient route-ambient-${variant}`} aria-hidden="true">
       {variant === "events" ? (
         <div className="ambient-circuit-field">
-          <span className="ambient-circuit-line line-a"></span>
-          <span className="ambient-circuit-line line-b"></span>
-          <span className="ambient-circuit-line line-c"></span>
-          <span className="ambient-circuit-line line-d"></span>
-          <span className="ambient-circuit-node node-a"></span>
-          <span className="ambient-circuit-node node-b"></span>
-          <span className="ambient-circuit-node node-c"></span>
-          <span className="ambient-circuit-node node-d"></span>
-          <span className="ambient-circuit-chip chip-a"></span>
-          <span className="ambient-circuit-chip chip-b"></span>
+          <CircuitBoardBackdrop />
         </div>
       ) : null}
 
